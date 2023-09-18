@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Placement Module Readme
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Usability
 
-## Available Scripts
+The Placement Module is designed to facilitate seamless interaction and communication between students, the training and placement cell, and hiring managers. Here's how each group can benefit from this module:
 
-In the project directory, you can run:
+### 1. Students
+- **Profile**: Maintain a comprehensive profile that includes information on skills, projects, and educational background.
+- **Resources for Placement**: Access resources and information necessary for successful placement, including guidance on applying for campus jobs and understanding the various testing and interview rounds.
 
-### `npm start`
+### 2. Training and Placement Cell
+- **Bridge**: Act as a bridge between students and HR professionals, facilitating effective communication and coordination.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 3. Hiring Managers
+- **Job Listings**: List job openings within your organization.
+- **Shortlisting Candidates**: Easily shortlist candidates based on their profiles and qualifications.
+- **Candidate Notifications**: Notify selected candidates about their job offers.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Core Features
 
-### `npm test`
+The Placement Module offers a range of core features to streamline the placement process for all stakeholders:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. Student Database
+- Maintain a centralized database of student profiles, making it easy for both students and hiring managers to access and review relevant information.
 
-### `npm run build`
+### 2. Mailing
+- Utilize built-in mailing capabilities to send messages, notifications, and updates to students and hiring managers.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Interview Scheduling
+- Efficiently schedule interviews, allowing for seamless coordination between students and hiring managers.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 4. Scheduling (HR and Students)
+- Provide a user-friendly scheduling system with different views for HR professionals and students, ensuring smooth communication and planning.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 5. Location Tracking (HR)
+- Enable HR professionals to track the location of candidates, enhancing the efficiency of the recruitment process.
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To get started with the Placement Module, please follow the installation and setup instructions in the accompanying documentation. You can also find detailed information on how to use each of the core features mentioned above.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+We hope that this module will greatly simplify the placement process and lead to successful placements for both students and hiring managers. If you have any questions, feedback, or encounter any issues, please don't hesitate to reach out to our support team.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for choosing the Placement Module for your placement needs!
