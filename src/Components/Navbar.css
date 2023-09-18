@@ -1,0 +1,86 @@
+ *{
+    font-family:kanit;
+}
+
+.NavBar{
+position: static;
+z-index: 1;
+}
+/* 
+.NavBarFeatures{
+    background-color: #E0DDDD;
+    color: black;
+    padding: 0.41rem;
+    padding-right: 2rem;
+    display: block;
+}
+.NavBarFeatures ul {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 2rem;
+ justify-content: end;
+ font-size: 1.14rem;
+}
+.NavBarFeatures li{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.mobileNav{
+    display: none;
+}
+.desktopNavlinks{
+    display: block;
+}
+
+
+.bigScreenMsg{
+    display: none;
+}
+
+.MobileNavlinks{
+    display: none;
+}
+
+
+@media (max-width:600px) {
+    .NavBarFeatures{
+        padding: 1rem;
+        padding-right: 2rem;
+    }
+    .mobileNav{
+        display: flex;
+        justify-content: right;
+    }
+    
+    
+    .desktopNavlinks{
+        display: none;
+
+    }
+
+    .MobileNavlinks{
+        display: flex;
+        justify-content:right;
+    }
+    .MobileNavlinks li{
+        display: flex;
+        gap: 0.5rem;
+    }
+    .MobileNavlinks ul{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        background-color:greenyellow;
+        padding: 4rem;
+        height: 80vh;
+        border-radius: 0.52rem;
+        font-size: 1.4rem;
+    }
+}
+
+ */
+
+
+
+
