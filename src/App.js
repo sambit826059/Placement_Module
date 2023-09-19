@@ -1,11 +1,9 @@
-import Navbar  from "./Components/NavBar";
+import NavBar  from "./Components/NavBar";
 import React from "react";
-import  Res from "./Components/Res"
 import Apply from "./Components/Apply";
 import  HeadBanner from "./Components/HeadBanner"
-
-
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Home from "./Components/Home";
 
 
 export default function App() {
@@ -15,17 +13,16 @@ export default function App() {
    
 
     <Router>
-      <Navbar/>
+    <NavBar/>
            
       <Routes>
         
       <Route path="/Apply" element={<Apply/>} />
-      <Route path="/Res" element={<Res/>} />
-
+      <Route path="/" element={<Home/>} />
        
       </Routes>
     </Router>
-      <HeadBanner/>
+    
     
     </>
     

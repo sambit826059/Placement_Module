@@ -14,6 +14,7 @@ import {
 function Navbar() {
   return (
         <>
+        
         <div className="  sticky top-0 z-10   w-[100%] ">
 
             
@@ -25,7 +26,7 @@ function Navbar() {
                 <div className="max-sm:absolute  min-md:relative  ">
                     <ul className=' grid  gap-2  sm:flex  sm:gap-4 sm:justify-end '>
 
-                    <li className=' hover:bg-gray-300 px-2 py-1 rounded text-center '><Link to ="/">Home</Link> </li>
+                    <Link  to ="/"> <li className='hover:bg-gray-300 px-2 py-1 rounded text-center'>Home</li></Link> 
 
 
                         <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group'>
@@ -33,7 +34,7 @@ function Navbar() {
                          <DropBoxLink LinkName={"Resource"}  Option_1={"Option1" }/>
                         </li>  
 
-                        <li className=' hover:bg-gray-300 px-2 py-1 rounded text-center '><Link to ="/apply">Apply</Link> </li>
+                        <Link to ="/apply"> <li className=' hover:bg-gray-300 px-2 py-1 rounded text-center '>Apply </li></Link>
                         
                         <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group'>
                         <DropBoxLink LinkName={"Interview"} Option_1={"Option1" }/>

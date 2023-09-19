@@ -11,18 +11,19 @@ export default function DropBoxLink(props) {
   return (
     <>
        <div className=''>
-                            <h6 className=' flex gap-2 hover:bg-gray-300 px-1 py-0.5 rounded group  '>
+                            <h6 className=' flex gap-2 group  '>
 
                               
-                               <a href="#"> <Link to="/Res">  {props.LinkName}</Link></a>
+                                <a href="#">  {props.LinkName}</a>
                                 <img className='transform rotate-0 group-hover:rotate-180 transition-transform  cursor-pointer' src={DroupDownButton} alt="DroupDown" />
                             </h6>
 
-                            <ul className=' absolute hidden group-hover:block z-999  py-5  px-5 mt-0  ml-[-4.1rem] bg-green-00       '>
+                            <ul className=' absolute hidden group-hover:block z-999  py-5  px-5 mt-0  ml-[-5rem] bg-green-00       '>
                                 <li className='grid justify-center  '>
                               
                                 <div className="absolute bg-white p-7 rotate-45 ml-20  border rounded ">
                                     </div>
+                                    
                                     <ul className='py-7 px-4 shadow-lg border rounded grid gap-1 transform scale-y-1  bg-white backdrop-blur-sm  transition-transform duration-500 ease-in-out   '>
                                     <div className="absolute bg-white p-7 rotate-45 ml-20   rounded ">
                                     </div>
