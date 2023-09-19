@@ -1,7 +1,12 @@
 import React from 'react'
 import DroupDownButton from "./ImgORicon/NavBarDropDownBtn.svg";
 import DropOptions from './DropOptions';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 export default function DropBoxLink(props) {
   return (
     <>
@@ -9,7 +14,7 @@ export default function DropBoxLink(props) {
                             <h6 className=' flex gap-2 hover:bg-gray-300 px-1 py-0.5 rounded group  '>
 
                               
-                               <a href="#">   {props.LinkName}</a>
+                               <a href="#"> <Link to="/Res">  {props.LinkName}</Link></a>
                                 <img className='transform rotate-0 group-hover:rotate-180 transition-transform  cursor-pointer' src={DroupDownButton} alt="DroupDown" />
                             </h6>
 
