@@ -25,6 +25,7 @@ export default function HeadBanner(props) {
 
     </div>
     
+    
     </>
   )
 }
