@@ -32,8 +32,12 @@ The Placement Module offers a range of core features to streamline the placement
 ### 4. Scheduling (HR and Students)
 - Provide a user-friendly scheduling system with different views for HR professionals and students, ensuring smooth communication and planning.
 
+HRs will be able to schedule their dates with the placement shell. And the students will also have read-only access to the calander.
+
 ### 5. Location Tracking (HR)
 - Enable HR professionals to track the location of candidates, enhancing the efficiency of the recruitment process.
+
+The enterprises software will include location tracking of the Hiring Managers for the college placement shell.
 
 ## Getting Started
 
