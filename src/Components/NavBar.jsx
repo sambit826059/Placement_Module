@@ -15,12 +15,12 @@ function Navbar() {
   return (
         <>
         
-        <div className="  sticky top-0 z-10   w-[100%] ">
+        <div className="  sticky top-0 z-10   w-[100%]  ">
 
             
 
-        <div className="bg-gray-200  p-2 pr-4 md:p-2 sm:pr-12 md:pr-12  ">    
-                    <div className="sm:hidden  grid justify-end ">
+        <div className="bg-gray-200  p-2 pr-4 md:p-2 sm:pr-12 md:pr-12   ">    
+                    <div className="sm:hidden  grid justify-end  ">
                     <img className=' p-2  hover:bg-gray-300  rounded' src={OpenMenu} alt="menu-open" />
                 </div>
                 <div className="max-sm:absolute  min-md:relative  ">
