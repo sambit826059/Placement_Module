@@ -39,7 +39,7 @@ export default function SliderHeadBanner() {
 
 
   return (
-    <div className="p-7  ">
+    <div className="  ">
       <Slider {...settings}>
         <div>
              <HeadBanner HeadBannerImage={resources}/>
