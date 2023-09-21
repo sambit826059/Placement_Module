@@ -7,20 +7,9 @@ import HeadBanner from "./HeadBanner";
 import  resources from "./ImgORicon/resources.webp";
 
 
-
 export default function SliderHeadBanner() {
 
-const PrevArrow = (props) => (
-  <button {...props} className="slick-prev bg-red-500 text-white">
-    Previous
-  </button>
-);
 
-const NextArrow = (props) => (
-  <button {...props} className="slick-next bg-green-500 text-white">
-    Next
-  </button>
-);
 
 
 
@@ -32,8 +21,9 @@ const NextArrow = (props) => (
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
+    prevArrow: <button className="slick-prev">Previous</button>,
+    nextArrow: <button className="slick-next">Next</button>,
+    
     beforeChange: (oldIndex, newIndex) => {
       setCurrentSlide(newIndex);
     },
@@ -49,7 +39,7 @@ const NextArrow = (props) => (
 
 
   return (
-    <div className="p-7 bg-black ">
+    <div className="p-7  ">
       <Slider {...settings}>
         <div>
              <HeadBanner HeadBannerImage={resources}/>
