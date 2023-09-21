@@ -3,12 +3,18 @@ import React from 'react'
 import HeadBanner from "./HeadBanner";
 import GoToTop from './GoToTop';
 import SliderHeadBanner from "./SliderHeadBanner";
+import AdBanner from './AdBanner';
 
 export default function Home() {
   return (
     <>
-      <SliderHeadBanner/>
+    <div className=" p-7">
+    <SliderHeadBanner/>
       <GoToTop/>
+      <AdBanner/>
+
+    </div>
+      
       
     </>
   )
