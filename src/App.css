@@ -2,3 +2,11 @@
 .slick-next::before {
   color: #000; 
 }
+
+.slick-dots li button::before {
+  font-size: 0.52rem; 
+ 
+}
+
+.slick-dots li:hover button::before {
+  color: steelblue;}
