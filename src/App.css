@@ -1,6 +1,7 @@
 .slick-prev::before,
 .slick-next::before {
   color: #000; 
+  display: block;
 }
 
 .slick-dots li button::before {
@@ -9,4 +10,14 @@
 }
 
 .slick-dots li:hover button::before {
-  color: steelblue;}
+  color: steelblue;
+}
+
+
+@media (max-width: 658px) {
+  .slick-prev::before,
+.slick-next::before {
+display: none;
+}
+}
+
