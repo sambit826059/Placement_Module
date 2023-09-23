@@ -14,7 +14,7 @@ import {
 
 function Navbar() {
 
-    let [open,setOpen]=useState(false);
+const [OpenNavMenu,setOpenNavMenu]=useState(false);
 
   return (
         <>
@@ -27,14 +27,14 @@ function Navbar() {
 
                     <div className="sm:hidden  grid justify-end  ">
                         <input type="checkbox" id='nav-toggle'  className="checkbox-sb group/check hidden"/>
-                        <label htmlFor="nav-toggle" className={`label-sb  rounded ${open ? 'hover:bg-red-200':'hover:bg-gray-300'}  `}>
-                            <img onClick={()=>setOpen(!open)} className=' p-2   transition-all duration-00 ease-in cursor-pointer' src={ open ? [CloseMenu] : [OpenMenu]}   alt="menu-open" />
+                        <label htmlFor="nav-toggle" className={`label-sb  rounded ${OpenNavMenu ? 'hover:bg-red-200':'hover:bg-gray-300'}  `}>
+                            <img onClick={()=>setOpenNavMenu(!OpenNavMenu)} className=' p-2   transition-all duration-00 ease-in cursor-pointer' src={ OpenNavMenu ? [CloseMenu] : [OpenMenu]}   alt="menu-open" />
 
                         </label>
                      
                     </div>
                 
-                    <div className={ ` top-[3.5rem]  max-sm:absolute   max-sm:bg-green-200     min-md:relative  min-md:bg-green-00    md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-2 transition-all duration-500 ease-in ${open ? 'top-15 ':'top-[-20rem]'}   `}>
+                    <div className={ ` top-[3.5rem]  max-sm:absolute   max-sm:bg-green-200     min-md:relative  min-md:bg-green-00    md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-2 transition-all duration-500 ease-in  ${OpenNavMenu ? 'top-15 block ':'top-[-20rem] hidden'}   `}>
                         
                         <ul className=' grid  gap-2  sm:flex  sm:gap-4 sm:justify-end '>
 
