@@ -10,29 +10,29 @@ import  resources from "./ImgORicon/resources.webp";
 export default function SliderHeadBanner() {
 
   const settings = {
-    dots: false, 
+    dots: true, 
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    beforeChange: (oldIndex, newIndex) => {
-      setCurrentSlide(newIndex);
-    },
+    // beforeChange: (oldIndex, newIndex) => {
+    //   setCurrentSlide(newIndex);
+    // },
     
   };
 
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // const [currentSlide, setCurrentSlide] = useState(0);
 
-  const slideCount = 3;
+  // const slideCount = 3;
 
 
 
 
 
   return (
-    <div className="  ">
+    <div className=" mb-7 ">
       <Slider {...settings}>
         <div>
              <HeadBanner HeadBannerImage={resources}/>
@@ -47,7 +47,7 @@ export default function SliderHeadBanner() {
         </div>
       </Slider>
 
-      <div className="py-4 gap-0  flex justify-center">
+      {/* <div className="py-4 gap-0  flex justify-center">
         {[...Array(slideCount).keys()].map((index) => (
           <div
             key={index}
@@ -56,7 +56,7 @@ export default function SliderHeadBanner() {
             }`}
           ></div>
         ))}
-      </div>
+      </div> */}
       
      
         
