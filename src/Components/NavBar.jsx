@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import DroupDownButton from "./ImgORicon/NavBarDropDownBtn.svg";
 import OpenMenu from "./ImgORicon/menuOpen.svg";
+import CloseMenu from "./ImgORicon/closeMenu.svg";
 import DropBoxLink from './DropBoxLink';
 
 import {
@@ -26,8 +27,8 @@ function Navbar() {
 
                     <div className="sm:hidden  grid justify-end  ">
                         <input type="checkbox" id='nav-toggle'  className="checkbox-sb group/check hidden"/>
-                        <label htmlFor="nav-toggle" className='label-sb'>
-                            <img onClick={()=>setOpen(!open)} className=' p-2  hover:bg-gray-300  rounded' src={OpenMenu} alt="menu-open" />
+                        <label htmlFor="nav-toggle" className={`label-sb  rounded ${open ? 'hover:bg-red-200':'hover:bg-gray-300'}  `}>
+                            <img onClick={()=>setOpen(!open)} className=' p-2   transition-all duration-00 ease-in cursor-pointer' src={ open ? [CloseMenu] : [OpenMenu]}   alt="menu-open" />
 
                         </label>
                      
