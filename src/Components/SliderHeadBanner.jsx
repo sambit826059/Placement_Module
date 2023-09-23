@@ -17,13 +17,13 @@ export default function SliderHeadBanner() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    beforeChange: (oldIndex, newIndex) => {
-      setCurrentSlide(newIndex);
-    },
+    // beforeChange: (oldIndex, newIndex) => {
+    //   setCurrentSlide(newIndex);
+    // },
     
   };
 
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // const [currentSlide, setCurrentSlide] = useState(0);
 
   // const slideCount = 3;
 
@@ -32,7 +32,7 @@ export default function SliderHeadBanner() {
 
 
   return (
-    <div className="  ">
+    <div className=" mb-7 ">
       <Slider {...settings}>
         <div>
              <HeadBanner HeadBannerImage={resources}/>

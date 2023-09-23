@@ -18,7 +18,7 @@ export default function DropBoxLink(props) {
                                 <img className='transform rotate-0 group-hover:rotate-180 transition-transform  cursor-pointer' src={DroupDownButton} alt="DroupDown" />
                             </h6>
 
-                            <ul className=' absolute hidden group-hover:block z-999  py-5  px-5 mt-0  ml-[-5rem] bg-green-00       '>
+                            <ul className='   sm:absolute hidden group-hover:block z-999  py-5  px-5 mt-0   sm:ml-[-5rem] bg-green-00       '>
                                 <li className='grid justify-center  '>
                               
                                 <div className="absolute bg-white p-7 rotate-45 ml-20  border rounded ">
