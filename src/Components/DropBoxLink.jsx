@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DroupDownButton from "./ImgORicon/NavBarDropDownBtn.svg";
 import DropOptions from './DropOptions';
 import {
@@ -8,17 +8,20 @@ import {
   Link
 } from "react-router-dom";
 export default function DropBoxLink(props) {
+
+  const [OpenDropBox,setOpenDropBox]=useState(false);
+
   return (
     <>
        <div className=''>
-                            <h6 className=' flex gap-2 group  '>
+                            <h6 className=' flex gap-2 md:group  '>
 
                               
                                 <a href="#">  {props.LinkName}</a>
-                                <img className='transform rotate-0 group-hover:rotate-180 transition-transform  cursor-pointer' src={DroupDownButton} alt="DroupDown" />
+                                <img onClick={()=>setOpenDropBox(!OpenDropBox)} className={`transform rotate-0 max-sm:group  ${OpenDropBox ? 'max-sm:rotate-180': 'max-sm:rotate-0'} md:group-hover:rotate-180 transition-transform  cursor-pointer`} src={DroupDownButton} alt="DroupDown" />
                             </h6>
 
-                            <ul className='   sm:absolute hidden group-hover:block z-999  py-5  px-5 mt-0   sm:ml-[-5rem] bg-green-00       '>
+                            <ul className={`   sm:absolute hidden  ${OpenDropBox ? 'max-sm:block ' : 'max-sm:hidden '}           md:group-hover:block z-999  py-5  px-5 mt-0   sm:ml-[-5rem] bg-green-00       `}>
                                 <li className='grid justify-center  '>
                               
                                 <div className="absolute bg-white p-7 rotate-45 ml-20  border rounded ">
