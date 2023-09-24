@@ -2,6 +2,7 @@ import React from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ResourcesBox from './ResourcesBox';
 
 export default function AdResources() {
 
@@ -9,7 +10,7 @@ export default function AdResources() {
         dots: false, 
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
@@ -19,8 +20,8 @@ export default function AdResources() {
   return (
     <>
     <div className="AdResources">
-        <div className="bg-gray-200 mt-5 h-[55vh] p-5 rounded ">
-            <div className="flex justify-center  ">
+        <div className="bg-gray-200 mt-5  py-8 rounded box-content">
+            <div className="flex justify-center py-5 mb-5 ">
             this banner is for the Resources ad 
 
             
@@ -28,15 +29,31 @@ export default function AdResources() {
 
             <Slider {...settings}>
             <div>
-                a
+                <ResourcesBox/>
             </div>
             
             <div>
-                b
+               <ResourcesBox/>
             </div>
 
             <div>
-                c
+              <ResourcesBox/>
+            </div>
+            <div>
+              <ResourcesBox/>
+            </div><div>
+                <ResourcesBox/>
+            </div>
+            
+            <div>
+               <ResourcesBox/>
+            </div>
+
+            <div>
+              <ResourcesBox/>
+            </div>
+            <div>
+              <ResourcesBox/>
             </div>
         </Slider>
         </div>
