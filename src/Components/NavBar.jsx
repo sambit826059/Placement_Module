@@ -14,7 +14,7 @@ import {
 
 function Navbar() {
 
-    let [open,setOpen]=useState(false);
+const [OpenNavMenu,setOpenNavMenu]=useState(false);
 
   return (
         <>
@@ -27,18 +27,18 @@ function Navbar() {
 
                     <div className="sm:hidden  grid justify-end  ">
                         <input type="checkbox" id='nav-toggle'  className="checkbox-sb group/check hidden"/>
-                        <label htmlFor="nav-toggle" className={`label-sb  rounded ${open ? 'hover:bg-red-200':'hover:bg-gray-300'}  `}>
-                            <img onClick={()=>setOpen(!open)} className=' p-2   transition-all duration-00 ease-in cursor-pointer' src={ open ? [CloseMenu] : [OpenMenu]}   alt="menu-open" />
+                        <label htmlFor="nav-toggle" className={`label-sb  rounded ${OpenNavMenu ? 'hover:bg-red-200':'hover:bg-gray-300'}  `}>
+                            <img onClick={()=>setOpenNavMenu(!OpenNavMenu)} className=' p-2   transition-all duration-00 ease-in cursor-pointer' src={ OpenNavMenu ? [CloseMenu] : [OpenMenu]}   alt="menu-open" />
 
                         </label>
                      
                     </div>
                 
-                    <div className={ ` top-[3.5rem]  max-sm:absolute   max-sm:bg-green-200     min-md:relative  min-md:bg-green-00    md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-2 transition-all duration-500 ease-in ${open ? 'top-15 ':'top-[-40rem]'}   `}>
+                    <div className={ ` top-[3.5rem]  max-sm:absolute   max-sm:bg-green-200    min-md:relative  min-md:bg-green-00    md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-2 transition-all duration-500 ease-in  ${OpenNavMenu ? 'top-15 max-sm:block ':'top-[-20rem] max-sm:hidden'}   `}>
                         
-                        <ul className=' grid  gap-2  sm:flex  sm:gap-4 sm:justify-end '>
+                        <ul className=' grid  gap-2  sm:flex  sm:gap-4 sm:justify-end  '>
 
-                        <Link  to ="/"> <li className='hover:bg-gray-300 px-2 py-1 rounded md:text-center'>Home</li></Link> 
+                        <Link  to ="/"> <li className={`hover:bg-gray-300 px-2 py-1 rounded md:text-center  `}>Home</li></Link> 
 
 
                             <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group'>

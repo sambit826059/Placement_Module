@@ -8,7 +8,7 @@ import AdBanner from './AdBanner';
 export default function Home() {
   return (
     <>
-    <div className=" p-7">
+    <div className=" px-7 md:px-10">
     <SliderHeadBanner/>
       <GoToTop/>
       <AdBanner/>

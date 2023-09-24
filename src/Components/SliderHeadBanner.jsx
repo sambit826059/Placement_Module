@@ -32,7 +32,7 @@ export default function SliderHeadBanner() {
 
 
   return (
-    <div className=" mb-7 ">
+    <div className="  md:px-3 mb-7 ">
       <Slider {...settings}>
         <div>
              <HeadBanner HeadBannerImage={resources}/>
