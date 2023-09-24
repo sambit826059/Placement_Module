@@ -34,7 +34,7 @@ function Navbar() {
                      
                     </div>
                 
-                    <div className={ ` top-[3.5rem]  max-sm:absolute   max-sm:bg-green-200     min-md:relative  min-md:bg-green-00    md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-2 transition-all duration-500 ease-in ${open ? 'top-15 ':'top-[-20rem]'}   `}>
+                    <div className={ ` top-[3.5rem]  max-sm:absolute   max-sm:bg-green-200     min-md:relative  min-md:bg-green-00    md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-2 transition-all duration-500 ease-in ${open ? 'top-15 ':'top-[-40rem]'}   `}>
                         
                         <ul className=' grid  gap-2  sm:flex  sm:gap-4 sm:justify-end '>
 
