@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HeadBanner from "./HeadBanner";
 import  resources from "./ImgORicon/resources.webp";
+import SliderImageOne from "./ImgORicon/SliderImageOne-1.svg";
 
 
 export default function SliderHeadBanner() {
@@ -15,7 +16,7 @@ export default function SliderHeadBanner() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     // beforeChange: (oldIndex, newIndex) => {
     //   setCurrentSlide(newIndex);
@@ -35,11 +36,15 @@ export default function SliderHeadBanner() {
     <div className="  md:px-3 mb-7 ">
       <Slider {...settings}>
         <div>
-             <HeadBanner HeadBannerImage={resources}/>
+             <HeadBanner 
+             HeadBannerImage={resources}
+             />
         </div>
         
         <div>
-             <HeadBanner HeadBannerImage={"https://picsum.photos/id/18/200/300"} />
+             <HeadBanner HeadBannerImage={SliderImageOne} 
+                          HeadLineForHeadBAnner={" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt sint expedita sequi."}
+                          />
         </div>
 
         <div>
