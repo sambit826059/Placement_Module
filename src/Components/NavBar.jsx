@@ -34,25 +34,25 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
                      
                     </div>
                 
-                    <div className={ ` top-[3.5rem]  max-sm:absolute   max-sm:bg-green-200    min-md:relative  min-md:bg-green-00    md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-2 transition-all duration-500 ease-in  ${OpenNavMenu ? 'top-15 max-sm:block ':'top-[-20rem] max-sm:hidden'}   `}>
+                    <div className={ ` top-[3.5rem]  max-sm:fixed   max-sm:bg-green-200    min-md:relative  min-md:bg-green-00    md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-2 max-sm:pl-0 transition-all duration-500 ease-in  ${OpenNavMenu ? 'top-15 max-sm:block ':'top-[-20rem] max-sm:hidden'}   `}>
                         
-                        <ul className=' grid  gap-2  sm:flex  sm:gap-4 sm:justify-end  '>
+                        <ul className=' grid  gap-2  sm:flex max-sm:gap-0  sm:gap-4 sm:justify-end  '>
 
-                        <Link  to ="/"> <li className={`hover:bg-gray-300 px-2 py-1 rounded md:text-center  `}>Home</li></Link> 
+                        <Link  to ="/"> <li className={`hover:bg-gray-300 px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}>Home</li></Link> 
 
 
-                            <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group'>
+                            <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3 '>
 
                             <DropBoxLink LinkName={"Resource"}  Option_1={"Option1" }/>
                             </li>  
 
-                            <Link to ="/apply"> <li className=' hover:bg-gray-300 px-2 py-1 rounded md:text-center '>Apply </li></Link>
+                            <Link to ="/apply"> <li className=' hover:bg-gray-300 px-2 py-1 rounded md:text-center   max-sm:text-2xl max-sm:py-3'>Apply </li></Link>
                             
-                            <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group'>
+                            <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3'>
                             <DropBoxLink LinkName={"Interview"} Option_1={"Option1" }/>
                             </li>
 
-                            <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group'>
+                            <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3'>
                                 <DropBoxLink LinkName={"Profile"} Option_1={"setting" }/>
                             </li>
 
@@ -71,3 +71,6 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
 }
 
 export default Navbar;
+
+// hover:bg-gray-300 px-2 py-1 max-sm:py-4  max-sm:text-2xl rounded md:text-center
+// flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group
