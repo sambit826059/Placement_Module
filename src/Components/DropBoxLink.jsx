@@ -17,7 +17,7 @@ export default function DropBoxLink(props) {
                             <h6 className=' flex gap-2 md:group  '>
 
                               
-                                <a href="#">  {props.LinkName}</a>
+                                <a href="#"  onClick={()=>setOpenDropBox(!OpenDropBox)}>  {props.LinkName}</a>
                                 <img onClick={()=>setOpenDropBox(!OpenDropBox)} className={`transform rotate-0 max-sm:group  ${OpenDropBox ? 'max-sm:rotate-180': 'max-sm:rotate-0'} md:group-hover:rotate-180 transition-transform  cursor-pointer`} src={DroupDownButton} alt="DroupDown" />
                             </h6>
 
