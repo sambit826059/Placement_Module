@@ -9,7 +9,7 @@ import AdResources from './AdResources';
 export default function Home() {
   return (
     <>
-    <div className="  px-7 md:px-10 ">
+    <div className="  px-7 md:px-10">
     <SliderHeadBanner/>
       <AdBanner/>
       <AdResources/>
