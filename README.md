@@ -34,6 +34,8 @@ The Placement Module offers a range of core features to streamline the placement
 
 HRs will be able to schedule their dates with the placement shell. And the students will also have read-only access to the calander.
 
+
+
 ### 5. Location Tracking (HR)
 - Enable HR professionals to track the location of candidates, enhancing the efficiency of the recruitment process.
 
