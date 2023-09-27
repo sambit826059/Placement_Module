@@ -1,5 +1,5 @@
 import React from 'react'
-// import NavBar from "./NavBar";
+import NavBar from "./NavBar";
 import HeadBanner from "./HeadBanner";
 import GoToTop from './GoToTop';
 import SliderHeadBanner from "./SliderHeadBanner";
@@ -9,6 +9,7 @@ import AdResources from './AdResources';
 export default function Home() {
   return (
     <>
+    <NavBar/>
     <div className="  px-7 md:px-10">
     <SliderHeadBanner/>
       <AdBanner/>
@@ -16,6 +17,9 @@ export default function Home() {
 
       <GoToTop/>
     </div>
+
+
+    
       
       
     </>
