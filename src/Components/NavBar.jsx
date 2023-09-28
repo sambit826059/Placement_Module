@@ -9,7 +9,7 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    NavLink
   } from "react-router-dom";
 
 function Navbar() {
@@ -38,7 +38,7 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
                         
                         <ul className=' grid  gap-2  sm:flex max-sm:gap-0  sm:gap-4 sm:justify-end  '>
 
-                        <Link  to ="/Home"> <li className={`hover:bg-gray-300 px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}>Home</li></Link> 
+                            <NavLink  to ="/" className={({isActive}) => ``}> <li className={`hover:bg-gray-300 px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}>Home</li></NavLink> 
 
 
                             <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3 '>
@@ -46,7 +46,7 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
                             <DropBoxLink LinkName={"Resource"}  Option_1={"Option1" }/>
                             </li>  
 
-                            <Link to ="/apply"> <li className=' hover:bg-gray-300 px-2 py-1 rounded md:text-center   max-sm:text-2xl max-sm:py-3'>Apply </li></Link>
+                            <NavLink to ="/apply" className={({isActive}) => ``}> <li className=' hover:bg-gray-300 px-2 py-1 rounded md:text-center   max-sm:text-2xl max-sm:py-3'>Apply </li></NavLink>
                             
                             <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3'>
                             <DropBoxLink LinkName={"Interview"} Option_1={"Option1" }/>
