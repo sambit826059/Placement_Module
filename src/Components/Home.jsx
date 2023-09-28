@@ -9,7 +9,6 @@ import AdResources from './AdResources';
 export default function Home() {
   return (
     <>
-    <NavBar/>
     <div className="  px-7 md:px-10">
     <SliderHeadBanner/>
       <AdBanner/>

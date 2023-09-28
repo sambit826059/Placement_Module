@@ -6,7 +6,6 @@ import NavBar from "./NavBar";
 export default function Apply() {
   return (
     <>
-            <NavBar/>
 
             <div className="text-center p-10 font-medium bg-yellow-100 "> 
             <h1 className='text-[2rem] p-5'>Apply here</h1>
