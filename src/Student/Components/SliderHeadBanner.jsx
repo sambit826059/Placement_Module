@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+// import  "../../App.css";
 import HeadBanner from "./HeadBanner";
-import  resources from "./ImgORicon/resources.webp";
 import SliderImageSecond from "./ImgORicon/SliderImageThree-3.svg";
 import SliderImageFirst from "./ImgORicon/SliderImageTwo-2.svg";
 import  SliderImageThird from "./ImgORicon/SliderImageOne-1.svg";
@@ -37,7 +37,7 @@ const HeadBannerButtonStyle_ThirdBanner=' bg-white bg-opacity-75  hover:bg-gray-
 
 
   return (
-    <div className="  md:px-3 mb-7 ">
+    <div className="slider-head md:px-3 mb-7 ">
       <Slider {...settings}>
         <div>
              <HeadBanner 

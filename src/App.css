@@ -1,5 +1,5 @@
-.slick-prev::before,
-.slick-next::before {
+.slider-head .slick-prev::before,
+.slider-head .slick-next::before {
   color: #000; 
   display: block;
 }
@@ -15,16 +15,20 @@
 
 
 @media (max-width: 658px) {
-  .slick-prev::before,
-.slick-next::before {
-display: none;
+
+
+  .slider-head .slick-prev::before,
+.slider-head .slick-next::before {
+  display: none;
 }
+
 }
 .AdResources .slick-prev::before {
 display: none;
 }
 
 .AdResources  .slick-next::before {
+  display: block;
   transform: scale(1.4);
   color: #00000074;
   position: absolute;
