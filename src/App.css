@@ -1,4 +1,36 @@
-.slick-prev::before,
-.slick-next::before {
+.slider-head .slick-prev::before,
+.slider-head .slick-next::before {
   color: #000; 
+  display: block;
 }
+
+.slick-dots li button::before {
+  font-size: 0.52rem; 
+ 
+}
+
+.slick-dots li:hover button::before {
+  color: steelblue;
+}
+
+
+@media (max-width: 658px) {
+
+
+  .slider-head .slick-prev::before,
+.slider-head .slick-next::before {
+  display: none;
+}
+
+}
+.AdResources .slick-prev::before {
+display: none;
+}
+
+.AdResources  .slick-next::before {
+  display: block;
+  transform: scale(1.4);
+  color: #00000074;
+  position: absolute;
+  /* right: 2.rem;  */
+  }
