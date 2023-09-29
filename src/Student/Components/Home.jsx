@@ -8,10 +8,9 @@ export default function Home() {
   return (
     <>
     <div className="  px-7 md:px-10">
-    <SliderHeadBanner/>
+       <SliderHeadBanner/>
       <AdBanner/>
       <AdResources/>
-
       <GoToTop/>
     </div>
 
