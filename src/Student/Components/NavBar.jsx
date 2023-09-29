@@ -1,8 +1,7 @@
 // Navbar.js
 import React, { useState } from 'react'
-import DroupDownButton from "./ImgORicon/NavBarDropDownBtn.svg";
-import OpenMenu from "./ImgORicon/menuOpen.svg";
-import CloseMenu from "./ImgORicon/closeMenu.svg";
+import OpenMenu from "../ImgORicon/menuOpen.svg";
+import CloseMenu from "../ImgORicon/closeMenu.svg";
 import DropBoxLink from './DropBoxLink';
 
 import {
