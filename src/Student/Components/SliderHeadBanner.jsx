@@ -5,9 +5,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 // import  "../../App.css";
 import HeadBanner from "./HeadBanner";
-import SliderImageSecond from "./ImgORicon/SliderImageThree-3.svg";
-import SliderImageFirst from "./ImgORicon/SliderImageTwo-2.svg";
-import  SliderImageThird from "./ImgORicon/SliderImageOne-1.svg";
+import SliderImageSecond from "../ImgORicon/SliderImageThree-3.svg";
+import SliderImageFirst from "../ImgORicon/SliderImageTwo-2.svg";
+import  SliderImageThird from "../ImgORicon/SliderImageOne-1.svg";
 
 
 
