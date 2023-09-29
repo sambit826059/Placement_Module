@@ -1,6 +1,4 @@
 import React from 'react'
-import mountain from "./ImgORicon/mountain.avif";
-
 export default function HeadBanner(props) {
   return (
     <>

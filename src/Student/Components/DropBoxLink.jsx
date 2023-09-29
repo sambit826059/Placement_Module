@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import DroupDownButton from "./ImgORicon/NavBarDropDownBtn.svg";
+import DroupDownButton from "../ImgORicon/NavBarDropDownBtn.svg";
 import DropOptions from './DropOptions';
 import {
   BrowserRouter as Router,
@@ -31,9 +31,9 @@ export default function DropBoxLink(props) {
                                     <div className="absolute bg-white p-7 rotate-45 ml-20    ">
                                     </div>
                                     
-                                        <DropOptions Option_1={[props.Option_1]} />
-                                        <DropOptions Option_1={[props.Option_1]} />
-                                        <DropOptions Option_1={[props.Option_1]} />
+                                      {props.Option_1 ? (<DropOptions Options={[props.Option_1]} />) :null}  
+                                      {props.Option_2 ? (<DropOptions Options={[props.Option_2]} />) :null}  
+                                      {props.Option_3 ? (<DropOptions Options={[props.Option_3]} />) :null}  
 
                                     </ul>
                                 </li> 

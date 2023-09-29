@@ -1,8 +1,7 @@
 // Navbar.js
 import React, { useState } from 'react'
-import DroupDownButton from "./ImgORicon/NavBarDropDownBtn.svg";
-import OpenMenu from "./ImgORicon/menuOpen.svg";
-import CloseMenu from "./ImgORicon/closeMenu.svg";
+import OpenMenu from "../ImgORicon/menuOpen.svg";
+import CloseMenu from "../ImgORicon/closeMenu.svg";
 import DropBoxLink from './DropBoxLink';
 
 import {
@@ -11,6 +10,7 @@ import {
     Route,
     NavLink
   } from "react-router-dom";
+import { toBeDisabled } from '@testing-library/jest-dom/matchers';
 
 function Navbar() {
 
@@ -43,17 +43,17 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
 
                             <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3 '>
 
-                            <DropBoxLink LinkName={"Resource"}  Option_1={"Option1" }/>
+                            <DropBoxLink LinkName={"Resource"}  Option_1={"Check" }/>
                             </li>  
 
                             <NavLink to="/apply" className={({isActive}) => ` ${isActive ? "bg-gray-300 hover:bg-gray-400 " : "bg-gray-00  hover:bg-gray-300 "}   px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}> <li >Apply </li></NavLink>
                             
                             <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3'>
-                            <DropBoxLink LinkName={"Interview"} Option_1={"Option1" }/>
+                            <DropBoxLink LinkName={"Interview"} Option_1={"Check Update" }/>
                             </li>
 
                             <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3'>
-                                <DropBoxLink LinkName={"Profile"} Option_1={"setting" }/>
+                                <DropBoxLink LinkName={"Profile"} Option_1={"setting" } Option_2={"Logout" }  />
                             </li>
 
                         </ul>
