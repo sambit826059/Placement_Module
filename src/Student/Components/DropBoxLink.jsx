@@ -32,7 +32,7 @@ export default function DropBoxLink(props) {
                                     </div>
                                     
                                       {props.Option_1 ? (<DropOptions Options={[props.Option_1]}  />) :null}  
-                                      {props.Option_2 ? (<DropOptions Options={[props.Option_2]} OptionLink={"/"} />) :null}  
+                                      {props.Option_2 ? (<DropOptions Options={[props.Option_2]} OptionLink={"/Login"} />) :null}  
                                       {props.Option_3 ? (<DropOptions Options={[props.Option_3]} />) :null}  
 
                                     </ul>
