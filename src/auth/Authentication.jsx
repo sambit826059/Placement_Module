@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
-export default function SignUp() {
-  document.title = "SignUp [PlacementModule]";
+export default function Authentication(props) {
 
-
-  const [selectedValue, setSelectedValue] = useState('');
+    const [selectedValue, setSelectedValue] = useState('');
 
   const handleDropdownChange = (event) => {
     const selectedOption = event.target.value;
@@ -20,12 +18,8 @@ export default function SignUp() {
   const selectedUserType = userTypeMap[selectedValue];
 
   return (
-
-
     <>
-    <div className="grid place-content-center bg-green-200  h-[100vh]">
-
-    <div className='p-12 py-[5rem] border-2 border-black rounded-xl bg-white '>
+     <div className='p-12 py-[5rem] border-2 border-black rounded-xl bg-white '>
         Welcome
           <br />
           <label htmlFor="dropdown">User type:</label>
@@ -42,20 +36,22 @@ export default function SignUp() {
                 <input className='bg-gray-200' type='text' name='username'/>
                 <br />
                 <label htmlFor="">Password</label><br/>
-
+       {
+        props.NeedRePasswordInputBox &&
+            <>
                 <input className='bg-gray-200' type='password' name='password'/><br />
-                <label htmlFor="">Re Password</label><br/>
+                <label htmlFor="">Re Password</label><br/> 
+            </>
+        }
 
                 <input className='bg-gray-200' type='password' name='Re_password'/><br />
                 
                 <Link to={'/Student'}> <button className='bg-gray-200 p-4 mt-2'>Submit</button></Link>
             </form>
             <h6>already have a account </h6>
-            <Link to={'/Login'}> <button className='p-4'>Login</button></Link>
+            <Link to={props.Links}> <button className='p-4'>{props.LinkButtonName}</button></Link>
 
         </div>
-    </div>
-    
     </>
   )
 }

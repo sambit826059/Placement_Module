@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Authentication from './Authentication';
 
 export default function Login() {
   document.title = "Login [PlacementModule]";
@@ -21,7 +22,19 @@ export default function Login() {
 
     <>
     <div className="grid place-content-center bg-orange-200 h-[100vh]">
-    <div className='p-10 py-[5rem] border-2 border-black rounded-xl bg-white '>
+    <Authentication LinkButtonName={'Sign up'} Links={'/SignUp'} NeedRePasswordInputBox={true} />
+
+    </div>
+    
+    
+    </>
+    
+
+  )
+}
+
+
+{/* <div className='p-10 py-[5rem] border-2 border-black rounded-xl bg-white '>
         Welcome back
         <br />
         <label htmlFor="dropdown">User type:</label>
@@ -44,13 +57,4 @@ export default function Login() {
         <h1>dont have any account </h1>
         <Link to={'/SignUp'}> <button className=''>Sign Up</button></Link>
 
-    </div>
-
-    </div>
-    
-    
-    </>
-    
-
-  )
-}
+    </div> */}
