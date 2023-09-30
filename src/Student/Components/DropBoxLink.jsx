@@ -31,8 +31,8 @@ export default function DropBoxLink(props) {
                                     <div className="absolute bg-white p-7 rotate-45 ml-20    ">
                                     </div>
                                     
-                                      {props.Option_1 ? (<DropOptions Options={[props.Option_1]} />) :null}  
-                                      {props.Option_2 ? (<DropOptions Options={[props.Option_2]} />) :null}  
+                                      {props.Option_1 ? (<DropOptions Options={[props.Option_1]}  />) :null}  
+                                      {props.Option_2 ? (<DropOptions Options={[props.Option_2]} OptionLink={"/"} />) :null}  
                                       {props.Option_3 ? (<DropOptions Options={[props.Option_3]} />) :null}  
 
                                     </ul>
