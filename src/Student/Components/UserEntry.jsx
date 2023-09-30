@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 
 export default function UserEntry() {
+  document.title = "Placement Module [EntyPoint]";
+
   return (
     <>
     <div className="p-9">

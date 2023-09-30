@@ -4,25 +4,42 @@ import './index.css';
 import App from './App';
 import Home from "./Student/Components/Home";
 import Apply from "./Student/Components/Apply";
+import UserEntry from "./Student/Components/UserEntry";
+import SignUp from "./Student/Components/SignUp";
+import Login from "./Student/Components/Login";
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 const router =createBrowserRouter([
+
   {
     path: '/',
-    element:<App/>,
-
-    children:[
+    element: <UserEntry />
+  },
+  {
+    path: '/Login',
+    element: <Login />
+  },
+  {
+    path: '/SignUp',
+    element: <SignUp />
+  },
+  {
+    path: '/Student',
+    element: <App />,
+    children: [
       {
-        path:"",
-        element:<Home/>
+        index: true, // This makes it the default route for the Student_Landing parent
+        element: <Home />
       },
       {
-        path:"/Apply",
-        element:<Apply/>
+        path: 'Apply', // Notice that you don't repeat the parent path here
+        element: <Apply />
       }
     ]
-
   }
+
+ 
+      
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
