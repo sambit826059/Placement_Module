@@ -9,34 +9,50 @@ import SignUp from "./Student/Components/SignUp";
 import Login from "./Student/Components/Login";
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-const router =createBrowserRouter([
+const User_type={
+  Student:'Student',
+  HR:'HR',
+  Admin:'Admin'
+}
 
+
+
+const Current_User_Type=User_type.HR
+const router =createBrowserRouter([
+  
+  // Entry  Links
   {
     path: '/',
     element: <UserEntry />
   },
   {
     path: '/Login',
-    element: <Login />
+    element:<Login />
   },
   {
     path: '/SignUp',
     element: <SignUp />
   },
+  // student Links
   {
     path: '/Student',
-    element: <App />,
+    element: <StudentElement><App /></StudentElement>,
     children: [
       {
-        index: true, // This makes it the default route for the Student_Landing parent
+        index: true, 
         element: <Home />
       },
       {
-        path: 'Apply', // Notice that you don't repeat the parent path here
+        path: 'Apply', 
         element: <Apply />
       }
     ]
-  }
+  },
+    // HR Links
+{
+   path:'/HR',
+   element:<HrElement><div>This is Hr Accessable things </div></HrElement>
+}
 
  
       
@@ -50,6 +66,21 @@ root.render(
 );
 
 
+function StudentElement({children}){
+  if(Current_User_Type === User_type.Student )
+  return<>{children}</>;
+  else{
+    return <UserEntry/>
+  }
+}
+
+function HrElement({children}){
+  if(Current_User_Type === User_type.HR )
+  return<>{children}</>;
+  else{
+    return <div>denied </div>
+  }
+}
 
 //   <Router>      
 //       <Routes>
