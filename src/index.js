@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import Home from "./Student/Components/Home";
 import Apply from "./Student/Components/Apply";
-import UserEntry from "./Student/Components/UserEntry";
-import SignUp from "./Student/Components/SignUp";
-import Login from "./Student/Components/Login";
+import UserEntry from "./auth/UserEntry";
+import SignUp from "./auth/SignUp";
+import Login from "./auth/Login";
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 const User_type={
@@ -17,7 +17,7 @@ const User_type={
 
 
 
-const Current_User_Type=User_type.HR
+const Current_User_Type=User_type.Student
 const router =createBrowserRouter([
   
   // Entry  Links
@@ -51,7 +51,7 @@ const router =createBrowserRouter([
     // HR Links
 {
    path:'/HR',
-   element:<HrElement><div>This is Hr Accessable things </div></HrElement>
+   element:<HrElement><div>This is Hr Accessable things </div></HrElement>,
 }
 
  
