@@ -5,24 +5,13 @@ import Authentication from './Authentication';
 export default function Login() {
   document.title = "Login [PlacementModule]";
 
-  const [selectedValue, setSelectedValue] = useState('');
+  const  EntryWayMessage_SignUp= "Create a account"
 
-  const handleDropdownChange = (event) => {
-    const selectedOption = event.target.value;
-    setSelectedValue(selectedOption);
-  };
-
-  const userTypeMap = {
-    option1: 'Student',
-    option2: 'HR',
-    option3: 'Admin',
-  };
-  const selectedUserType = userTypeMap[selectedValue];
   return (
 
     <>
     <div className="grid place-content-center bg-orange-200 h-[100vh]">
-    <Authentication LinkButtonName={'Sign up'} Links={'/SignUp'} NeedRePasswordInputBox={true} />
+    <Authentication LinkButtonName={'SignUp'} Links={'/SignUp'} EntryWayMessage={EntryWayMessage_SignUp} />
 
     </div>
     
