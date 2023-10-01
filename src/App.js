@@ -1,28 +1,17 @@
-import NavBar  from "./Components/NavBar";
+import NavBar  from "./Student/Components/NavBar";
 import React from "react";
-import Apply from "./Components/Apply";
-import  HeadBanner from "./Components/HeadBanner"
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Home from "./Components/Home";
+import { BrowserRouter as Router, Route, Routes, Link, Outlet } from 'react-router-dom';
 import "./App.css"
+import Footer from "./Student/Components/Footer";
+
 
 export default function App() {
   return (
     <>
     
-   
-
-    <Router>
     <NavBar/>
-           
-      <Routes>
-        
-      <Route path="/Apply" element={<Apply/>} />
-      <Route path="/" element={<Home/>} />
-       
-      </Routes>
-    </Router>
-    
+    <Outlet/>
+    <Footer/>
     
     </>
     
