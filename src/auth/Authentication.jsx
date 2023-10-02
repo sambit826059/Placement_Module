@@ -68,7 +68,7 @@ export default function Authentication(props) {
     <>
     
      <div className='p-12 py-[5rem] border-2 border-black rounded-xl bg-white '>
-       <h1 className={`  ${selectedUserType ? 'text-green-400': 'text-white'}`}>hello {selectedUserType} <h1 className='text-red-400'>{Errormesg}</h1></h1> 
+       <h1 className={`  ${selectedUserType ? 'text-green-400': 'text-white'}`}>hello {selectedUserType} </h1> 
 
         Welcome
           <br />
