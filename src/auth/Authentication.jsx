@@ -1,25 +1,51 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useEffect, useContext } from 'react'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import ContextUserType from '../Contexts/ContextUserType';
 
 export default function Authentication(props) {
 
     const [selectedValue, setSelectedValue] = useState('');
+    const [UserName, setUserName] = useState('')
+    const [PassWord, setPassWord] = useState('')
+    const [RePassWord, setRePassWord] = useState('')
+    const [Errormesg, setErrormesg] = useState('')
+    // const [selectedUserType, setSelectedUserType] = useState('')
 
-  const handleDropdownChange = (event) => {
-    const selectedOption = event.target.value;
-    setSelectedValue(selectedOption);
-  };
+    // const {selectedUserType}=useContext(ContextUserType);
+    // const {setSelectedUserType}=useContext(ContextUserType);
+
+   
+
   const userTypeMap = {
-    option1: 'Student',
-    option2: 'HR',
-    option3: 'Admin',
+    NormalUser:'Not Selected',
+    Student: 'Student',
+    HR: 'HR',
+    Admin: 'Admin',
   };
-  const selectedUserType = userTypeMap[selectedValue];
+  // setSelectedUserType(userTypeMap[selectedValue]);
+
+  const selectedUserType=userTypeMap[selectedValue];
+
   const [Entry_Link,setEntry_Link]=useState('')
+
+ 
+  const  HandleFormSubmit=(e)=>{
+    e.preventDefault(); 
+  }
+
 
   useEffect(() => {
     if (selectedUserType === 'Student') {
-      setEntry_Link('/Student');
+      if(UserName==='soumen' && PassWord==='102'){
+        setEntry_Link('/Student');
+
+      }
+      else if(UserName==='sambit'&& PassWord==='42'){
+        setEntry_Link('/Student');
+      }
+      else{
+        setEntry_Link('');
+      }
     } 
     else if (selectedUserType === 'HR') {
       setEntry_Link('/HR');
@@ -33,8 +59,7 @@ export default function Authentication(props) {
     {
       setEntry_Link('');
     }
-  }, [selectedUserType]);
-
+  }, [selectedUserType,UserName,PassWord]);
 
   
 
@@ -43,39 +68,39 @@ export default function Authentication(props) {
     <>
     
      <div className='p-12 py-[5rem] border-2 border-black rounded-xl bg-white '>
-       <h1 className={`  ${selectedUserType ? 'text-green-400': 'text-white'}`}>hello {selectedUserType}</h1> 
+       <h1 className={`  ${selectedUserType ? 'text-green-400': 'text-white'}`}>hello {selectedUserType} <h1 className='text-red-400'>{Errormesg}</h1></h1> 
 
         Welcome
           <br />
           <label htmlFor="dropdown">User type:</label>
-          <select id="dropdown" name="dropdown" onChange={handleDropdownChange}>
-             <option value="option0">Not Selected</option>
-            <option value="option1">Student</option>
-            <option value="option2">HR</option>
-            <option value="option3">Admin</option>
+          <select id="dropdown" name="dropdown"value={selectedValue} onChange={(e)=>setSelectedValue(e.target.value)}>
+             <option value="NormalUser">Not Selected</option>
+            <option value="Student">Student</option>
+            <option value="HR">HR</option>
+            <option value="Admin">Admin</option>
         </select>
 
                 
-            <form action="/signup" method="post">
+            <form action="/signup" method="post" onSubmit={HandleFormSubmit}>
                 <label htmlFor="">Username</label><br/>
-                <input className='bg-gray-200' type='text' name='username'/>
+                <input className='bg-gray-200' type='text' value={UserName} onChange={(e)=>setUserName(e.target.value)} name='username'/>
                 <br />
                 <label htmlFor="">Password</label><br/>
+                <input className='bg-gray-200' type='password' value={PassWord} onChange={(e)=>setPassWord(e.target.value) } name='password'/><br />
+
        {
         props.SignUpformUse &&
             <>
-                <input className='bg-gray-200' type='password' name='password'/><br />
                 <label htmlFor="">Re Password</label><br/> 
+                <input className='bg-gray-200' type='password'value={RePassWord} onChange={(e)=>setRePassWord(e.target.value)} name='Re_password'/><br />
+
             </>
         }
-
-                <input className='bg-gray-200' type='password' name='Re_password'/><br />
-                
-                <Link to={Entry_Link}> <button className='bg-gray-200 p-4 mt-2'>Submit</button></Link>
-            </form>
+                <Link to={Entry_Link}> <button className='bg-gray-200 p-4 mt-2' type='submit'>Submit</button></Link>
+           
             <h6> {props.EntryWayMessage} </h6>
             <Link to={props.Links}> <button className='p-4'>{props.LinkButtonName}</button></Link>
-
+            </form>
         </div>
     </>
   )
