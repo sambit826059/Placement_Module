@@ -10,6 +10,10 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import StudentLandingLayout from "./Student/Components/StudentLandingLayout";
 import ContextUserType from "./Contexts/ContextUserType";
 import Authentication from "./auth/Authentication";
+import HrLandingLayout from "./HR/Components/HrLandingLayout";
+import HrHome from "./HR/Components/HrHome";
+import AdminLandingLayout from "./Admin/AdminLandingLayout";
+import AdminHome from "./Admin/AdminHome";
 
 
 
@@ -81,7 +85,9 @@ export default function App() {
     if (TypeOFuser === "HR") {
       return <><h1>Welcome</h1></>;
     } else {
-      return <div className="text-red-600 text-center text-[8rem]">Oops denied</div>;
+      return  <StudentLandingLayout />;
+
+      // for testing 
     }
   }
 
@@ -89,7 +95,7 @@ export default function App() {
     if (TypeOFuser === "Admin") {
       return <>{children}</>;
     } else {
-      return <div className="text-red-600 text-center text-[8rem]">Denied</div>;
+      return  <AdminLandingLayout/>;
     }
   }
 
@@ -116,13 +122,28 @@ export default function App() {
         </Route>
 
         {/* HR Links */}
-        <Route path="/HR" element={<HrElement />}>
-          {/* HR-specific routes */}
+        <Route path="/HR" 
+          element={
+            <HrElement >
+                <HrLandingLayout/>
+            </HrElement >
+          }
+        >
+          <Route path="" element={<HrHome />} />
+         
         </Route>
 
         {/* Admin Links */}
-        <Route path="/Admin" element={<AdminElement />}>
-          {/* Admin-specific routes */}
+        <Route path="/Admin" 
+          element={
+          <AdminElement >
+            <AdminLandingLayout/>
+          </AdminElement >
+          }
+        >
+           <Route path="" element={<AdminHome/>} />
+
+          
         </Route>
       </Routes>
 
