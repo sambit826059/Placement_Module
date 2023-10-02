@@ -14,7 +14,7 @@ export default function Authentication(props) {
     // const {selectedUserType}=useContext(ContextUserType);
     // const {setSelectedUserType}=useContext(ContextUserType);
 
-   
+  //  const { selectedUserType, setSelectedUserType } = useContext(ContextUserType);
 
   const userTypeMap = {
     NormalUser:'Not Selected',
