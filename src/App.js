@@ -71,21 +71,21 @@ export default function App() {
 
 
 
-  const [TypeOFuser, setTypeOFuser] = useState('Student'); 
+  const [TypeOFuser, setTypeOFuser] = useState('Admin'); 
 
   function StudentElement({ children }) {
     if (TypeOFuser === "Student") {
       return <>{children}</>;
     } else {
-      return <div className="text-red-600 text-center text-[8rem]">Oops</div>;
+      return <div className="text-red-600 text-center text-[8rem]">Denied</div>;
     }
   }
 
   function HrElement({ children }) {
     if (TypeOFuser === "HR") {
-      return <><h1>Welcome</h1></>;
+      return <>{children}</>;
     } else {
-      return  <StudentLandingLayout />;
+      return <div className="text-red-600 text-center text-[8rem]">Denied</div> ;
 
       // for testing 
     }
@@ -95,7 +95,7 @@ export default function App() {
     if (TypeOFuser === "Admin") {
       return <>{children}</>;
     } else {
-      return  <AdminLandingLayout/>;
+      return  <div className="text-red-600 text-center text-[8rem]">Denied</div> ;
     }
   }
 
