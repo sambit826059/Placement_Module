@@ -11,7 +11,7 @@ export default function ContextWorking() {
     <>
     <ContextUserType.Provider value={{selectedUserType, setSelectedUserType}}>
         <App/>
-        <Authentication/>
+        {/* <Authentication/> */}
     </ContextUserType.Provider>
     </>
   )
