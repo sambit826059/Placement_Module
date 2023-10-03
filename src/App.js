@@ -117,8 +117,9 @@ export default function App() {
             </StudentElement>
           }
         >
-          <Route path="" element={<Home />} />
-          <Route path="Apply" element={<Apply />} />
+          <Route path="/Student/" element={<Home />} />
+          <Route path="/Student/Home" element={<Home />} />
+          <Route path="/Student/Apply" element={<Apply />} />
         </Route>
 
         {/* HR Links */}
