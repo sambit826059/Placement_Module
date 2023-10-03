@@ -25,6 +25,7 @@ export default function Authentication(props) {
   // setSelectedUserType(userTypeMap[selectedValue]);
 
   const selectedUserType=userTypeMap[selectedValue];
+  const [AuthUser, setAuthUser] = useState('NotSelected')
 
   const [Entry_Link,setEntry_Link]=useState('')
 
@@ -38,10 +39,13 @@ export default function Authentication(props) {
     if (selectedUserType === 'Student') {
       if(UserName==='soumen' && PassWord==='102'){
         setEntry_Link('/Student');
+        setAuthUser(selectedUserType);
 
       }
       else if(UserName==='sambit'&& PassWord==='42'){
         setEntry_Link('/Student');
+        setAuthUser(selectedUserType);
+
       }
       else{
         setEntry_Link('');
@@ -49,10 +53,14 @@ export default function Authentication(props) {
     } 
     else if (selectedUserType === 'HR') {
       setEntry_Link('/HR');
+      setAuthUser(selectedUserType);
+
 
     }
     else if (selectedUserType === 'Admin') {
       setEntry_Link('/Admin');
+      setAuthUser(selectedUserType);
+
 
     }
     else 
