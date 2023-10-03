@@ -38,15 +38,15 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
                         
                         <ul className=' grid  gap-2  sm:flex max-sm:gap-0  sm:gap-4 sm:justify-end  '>
 
-                            <NavLink  to="/Student" className={({isActive}) => ` ${isActive ? "bg-gray-300 hover:bg-gray-400 " : "bg-gray-00  hover:bg-gray-300 "}   px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}> <li >Home</li></NavLink> 
+                            <NavLink  to="/Student/Home" className={({isActive}) => ` ${ !isActive ? "bg-gray-00  hover:bg-gray-300 " : "bg-gray-00  underline underline-offset-8  hover:bg-gray-300 "}   px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}> <li >Home</li></NavLink> 
 
 
-                            <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3 '>
+                            <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3  '>
 
                             <DropBoxLink LinkName={"Resource"}  Option_1={"Check" }/>
                             </li>  
 
-                            <NavLink to="/Student/apply" className={({isActive}) => ` ${isActive ? "bg-gray-300 hover:bg-gray-400 " : "bg-gray-00  hover:bg-gray-300 "}   px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}> <li >Apply </li></NavLink>
+                            <NavLink to="/Student/apply" className={({isActive}) => ` ${isActive ? "bg-gray-00 underline underline-offset-8 hover:bg-gray-300 " : "bg-gray-00   hover:bg-gray-300 "}   px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}> <li >Apply </li></NavLink>
                             
                             <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3'>
                             <DropBoxLink LinkName={"Interview"} Option_1={"Check Update" }/>
@@ -72,5 +72,4 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
 
 export default Navbar;
 
-// hover:bg-gray-300 px-2 py-1 max-sm:py-4  max-sm:text-2xl rounded md:text-center
-// flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group
+
