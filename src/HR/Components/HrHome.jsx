@@ -4,7 +4,6 @@ export default function HrHome() {
   return (
     <>
     <h1 className='p-10 text-center text-green-400'>
-      HR dash bord
     </h1>
     </>
   )
