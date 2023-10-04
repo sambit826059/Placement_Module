@@ -8,12 +8,10 @@ export default function HrLandingLayout() {
   return (
     <>
     {/* <div className="flex "> */}
-    <div class="grid grid-cols-[20%,78%] gap-4  md:w-70rem mx-auto  p-4">    
+    <div class="grid grid-cols-[14%,86%] gap-4 mx-auto px-[2rem] py-8 ">    
       <HrNavBar/>
       <Outlet/>
     </div>
-    
-    
     </>
   )
 }
