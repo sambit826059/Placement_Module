@@ -1,6 +1,7 @@
 import React, { useState,useEffect, useContext } from 'react'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import ContextUserType from '../Contexts/ContextUserType';
+import AuthUserType from './AuthUserType';
 
 export default function Authentication(props) {
 
@@ -66,7 +67,7 @@ export default function Authentication(props) {
 
   return (
     <>
-    
+    <AuthUserType />
      <div className='p-12 py-[5rem] border-2 border-black rounded-xl bg-white '>
        <h1 className={`  ${selectedUserType ? 'text-green-400': 'text-white'}`}>hello {selectedUserType} </h1> 
 

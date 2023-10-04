@@ -1,8 +1,8 @@
 // Navbar.js
 import React, { useState } from 'react'
-import OpenMenu from "../ImgORicon/menuOpen.svg";
-import CloseMenu from "../ImgORicon/closeMenu.svg";
-import DropBoxLink from './DropBoxLink';
+import OpenMenu from "../../Student/ImgORicon/menuOpen.svg";
+import CloseMenu from "../../Student/ImgORicon/closeMenu.svg";
+import DropBoxLink from '../../Student/Components/DropBoxLink';
 
 import {
     BrowserRouter as Router,
@@ -12,7 +12,7 @@ import {
   } from "react-router-dom";
 import { toBeDisabled } from '@testing-library/jest-dom/matchers';
 
-function Navbar() {
+function HrNavBar() {
 
 const [OpenNavMenu,setOpenNavMenu]=useState(false);
 
@@ -38,19 +38,16 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
                         
                         <ul className=' grid  gap-2  sm:flex max-sm:gap-0  sm:gap-4 sm:justify-end  '>
 
-                            <NavLink  to="/Student/Home" className={({isActive}) => ` ${ !isActive ? "bg-gray-00  hover:bg-gray-300 " : "bg-gray-00  underline underline-offset-8  hover:bg-gray-300 "}   px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}> <li >Home</li></NavLink> 
+                            <NavLink  to="/HR/home" className={({isActive}) => ` ${ !isActive ? "bg-gray-00  hover:bg-gray-300 " : "bg-gray-00  underline underline-offset-8  hover:bg-gray-300 "}   px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}> <li >Home</li></NavLink> 
 
 
-                            <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3  '>
-
-                            <DropBoxLink LinkName={"Resource"}  Option_1={"Check" }/>
-                            </li>  
-
-                            <NavLink to="/Student/apply" className={({isActive}) => ` ${isActive ? "bg-gray-00 underline underline-offset-8 hover:bg-gray-300 " : "bg-gray-00   hover:bg-gray-300 "}   px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}> <li >Apply </li></NavLink>
                             
-                            <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3'>
-                            <DropBoxLink LinkName={"Interview"} Option_1={"Check Update" }/>
-                            </li>
+
+                            <NavLink to="/HR/jobposting" className={({isActive}) => ` ${isActive ? "bg-gray-00 underline underline-offset-8 hover:bg-gray-300 " : "bg-gray-00   hover:bg-gray-300 "}   px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}> <li >Job Posting  </li></NavLink>
+                            
+                            <NavLink to="/HR/Applicants" className={({isActive}) => ` ${isActive ? "bg-gray-00 underline underline-offset-8 hover:bg-gray-300 " : "bg-gray-00   hover:bg-gray-300 "}   px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}> <li >Applicants </li></NavLink>
+
+                            
 
                             <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3'>
                                 <DropBoxLink LinkName={"Profile"} Option_1={"setting" } Option_2={"Logout" }  />
@@ -70,6 +67,6 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
     );
 }
 
-export default Navbar;
+export default HrNavBar;
 
 
