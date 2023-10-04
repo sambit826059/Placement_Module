@@ -3,8 +3,9 @@ import React from 'react'
 export default function HrHome() {
   return (
     <>
-    <h1 className='p-10 text-center text-green-400'>
-    </h1>
+   <div className='bg-gray-200 p-10 rounded-md'>
+    this is on right 
+   </div>
     </>
   )
 }

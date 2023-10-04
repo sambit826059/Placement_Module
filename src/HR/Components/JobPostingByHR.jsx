@@ -3,7 +3,8 @@ import React from 'react'
 export default function JobPostingByHR() {
   return (
     <>
-    <div className="p-10">
+      <div className='bg-gray-200 p-10 rounded-md'>
+
         <button className='bg-green-400' >Add Job posting</button>
         <br />
         Post the job Posting Details:- 
