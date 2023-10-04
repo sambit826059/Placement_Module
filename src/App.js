@@ -14,67 +14,25 @@ import HrLandingLayout from "./HR/Components/HrLandingLayout";
 import HrHome from "./HR/Components/HrHome";
 import AdminLandingLayout from "./Admin/AdminLandingLayout";
 import AdminHome from "./Admin/AdminHome";
-
-
-
-
-// const router =createBrowserRouter([
-  
-//   //-------- Entry  Links----------
-//   {
-//     path: '/',
-//     element: <UserEntry />
-//   },
-//   {
-//     path: '/Login',
-//     element:<Login />
-//   },
-//   {
-//     path: '/SignUp',
-//     element: <SignUp />
-//   },
-//   //------ student Links------
-//   {
-//     path: '/Student',
-//     element: <StudentElement><StudentLandingLayout/></StudentElement>,
-//     children: [
-      
-//       {
-//         path: '', 
-//         element: <Home />
-//       },
-//       {
-//         path: 'Apply', 
-//         element: <Apply />
-//       }
-//     ]
-//   },
-//     //-------HR Links-----
-// {
-//    path:'/HR',
-//    element:<HrElement><div>This is Hr Accessible things </div></HrElement>,
-// },
-
-// // Admin Links
-// {
-//   path:'/Admin',
-//   element:<AdminElement><div>Welcome </div></AdminElement>,
-// }
-      
-// ])
+import AuthUserType from "./auth/AuthUserType";
+import JobPostingByHR from "./HR/Components/JobPostingByHR";
+import ApplicantHR from "./HR/Components/ApplicantHR";
 
 
 export default function App() {
 
   // const [selectedUserType, setSelectedUserType] = useState('Not Selected');
   // const {selectedUserType}=useContext(ContextUserType);
+  
+  const [DataFromAuthType, setDataFromAuthType] = useState('HR');
 
+  const GettingDataFromAuth = (data) => {
+    setDataFromAuthType(data);
+  };
 
-
-  const [TypeOFuser, setTypeOFuser] = useState('Admin'); 
-
+  // const [TypeOFuser, setTypeOFuser] = useState(DataFromAuthType); 
   function StudentElement({ children }) {
-    if (TypeOFuser === "Student") {
+    if (DataFromAuthType === "Student") {
       return <>{children}</>;
     } else {
       return <div className="text-red-600 text-center text-[8rem]">Denied</div>;
@@ -82,7 +40,7 @@ export default function App() {
   }
 
   function HrElement({ children }) {
-    if (TypeOFuser === "HR") {
+    if (DataFromAuthType === "HR") {
       return <>{children}</>;
     } else {
       return <div className="text-red-600 text-center text-[8rem]">Denied</div> ;
@@ -92,12 +50,13 @@ export default function App() {
   }
 
   function AdminElement({ children }) {
-    if (TypeOFuser === "Admin") {
+    if (DataFromAuthType === "Admin") {
       return <>{children}</>;
     } else {
       return  <div className="text-red-600 text-center text-[8rem]">Denied</div> ;
     }
   }
+
 
   return (
     <>
@@ -130,7 +89,9 @@ export default function App() {
             </HrElement >
           }
         >
-          <Route path="" element={<HrHome />} />
+          <Route path="/HR/home" element={<HrHome />} />
+          <Route path="/HR/jobposting" element={<JobPostingByHR />} />
+          <Route path="/HR/Applicants" element={<ApplicantHR/>} />
          
         </Route>
 
@@ -147,6 +108,9 @@ export default function App() {
           
         </Route>
       </Routes>
+      
+      <AuthUserType SendDataToApp={GettingDataFromAuth} />
+      
 
     </Router>
 
