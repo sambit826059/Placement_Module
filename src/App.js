@@ -89,6 +89,7 @@ export default function App() {
             </HrElement >
           }
         >
+          <Route path="/HR/" element={<HrHome />} />
           <Route path="/HR/home" element={<HrHome />} />
           <Route path="/HR/jobposting" element={<JobPostingByHR />} />
           <Route path="/HR/Applicants" element={<ApplicantHR/>} />

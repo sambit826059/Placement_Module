@@ -18,7 +18,7 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
 
   return (
         <>
-        <div className='bg-gray-300 py-10 rounded-md h-[42vw]'>
+        <div className='bg-gray-300 py-10 rounded-md h-[42vw] '>
 
                     <div className={ `  `}>
                         
