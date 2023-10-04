@@ -38,18 +38,18 @@ export default function Authentication(props) {
   useEffect(() => {
     if (selectedUserType === 'Student') {
       if(UserName==='soumen' && PassWord==='102'){
-        setEntry_Link('/Student');
+        setEntry_Link('/Student/Home');
 
       }
       else if(UserName==='sambit'&& PassWord==='42'){
-        setEntry_Link('/Student');
+        setEntry_Link('/Student/Home');
       }
       else{
         setEntry_Link('');
       }
     } 
     else if (selectedUserType === 'HR') {
-      setEntry_Link('/HR');
+      setEntry_Link('/HR/home');
 
     }
     else if (selectedUserType === 'Admin') {
