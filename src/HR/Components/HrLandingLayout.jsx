@@ -7,8 +7,7 @@ import Footer from '../../Student/Components/Footer'
 export default function HrLandingLayout() {
   return (
     <>
-    {/* <div className="flex "> */}
-    <div class="grid grid-cols-[14%,86%] gap-4 mx-auto px-[2rem] py-8 ">    
+    <div class="grid grid-cols-[14%,85%] gap-4 overflow-hidden px-4  ">    
       <HrNavBar/>
       <Outlet/>
     </div>
