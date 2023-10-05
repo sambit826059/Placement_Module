@@ -37,16 +37,16 @@ export default function Authentication(props) {
 
   useEffect(() => {
     if (selectedUserType === 'Student') {
-      if(UserName==='soumen' && PassWord==='102'){
+      // if(UserName==='soumen' && PassWord==='102'){
         setEntry_Link('/Student/Home');
 
-      }
-      else if(UserName==='sambit'&& PassWord==='42'){
-        setEntry_Link('/Student/Home');
-      }
-      else{
-        setEntry_Link('');
-      }
+      // }
+      // else if(UserName==='sambit'&& PassWord==='42'){
+        // setEntry_Link('/Student/Home');
+      // }
+      // else{
+        // setEntry_Link('');
+      // }
     } 
     else if (selectedUserType === 'HR') {
       setEntry_Link('/HR/home');
@@ -67,7 +67,6 @@ export default function Authentication(props) {
 
   return (
     <>
-    <AuthUserType />
      <div className='p-12 py-[5rem] border-2 border-black rounded-xl bg-white '>
        <h1 className={`  ${selectedUserType ? 'text-green-400': 'text-white'}`}>hello {selectedUserType} </h1> 
 

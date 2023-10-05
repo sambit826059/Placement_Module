@@ -20,44 +20,6 @@ import ApplicantHR from "./HR/Components/ApplicantHR";
 
 
 export default function App() {
-
-  // const [selectedUserType, setSelectedUserType] = useState('Not Selected');
-  // const {selectedUserType}=useContext(ContextUserType);
-  
-  const [DataFromAuthType, setDataFromAuthType] = useState('HR');
-
-  const GettingDataFromAuth = (data) => {
-    setDataFromAuthType(data);
-  };
-
-  // const [TypeOFuser, setTypeOFuser] = useState(DataFromAuthType); 
-  function StudentElement({ children }) {
-    if (DataFromAuthType === "Student") {
-      return <>{children}</>;
-    } else {
-      return <div className="text-red-600 text-center text-[8rem]">Denied</div>;
-    }
-  }
-
-  function HrElement({ children }) {
-    if (DataFromAuthType === "HR") {
-      return <>{children}</>;
-    } else {
-      return <div className="text-red-600 text-center text-[8rem]">Denied</div> ;
-
-      // for testing 
-    }
-  }
-
-  function AdminElement({ children }) {
-    if (DataFromAuthType === "Admin") {
-      return <>{children}</>;
-    } else {
-      return  <div className="text-red-600 text-center text-[8rem]">Denied</div> ;
-    }
-  }
-
-
   return (
     <>
     <Router>
@@ -71,9 +33,9 @@ export default function App() {
         <Route
           path="/Student"
           element={
-            <StudentElement>
+            
               <StudentLandingLayout />
-            </StudentElement>
+           
           }
         >
           <Route path="/Student/" element={<Home />} />
@@ -84,9 +46,9 @@ export default function App() {
         {/* HR Links */}
         <Route path="/HR" 
           element={
-            <HrElement >
+           
                 <HrLandingLayout/>
-            </HrElement >
+           
           }
         >
           <Route path="/HR/" element={<HrHome />} />
@@ -99,9 +61,7 @@ export default function App() {
         {/* Admin Links */}
         <Route path="/Admin" 
           element={
-          <AdminElement >
             <AdminLandingLayout/>
-          </AdminElement >
           }
         >
            <Route path="" element={<AdminHome/>} />
@@ -110,7 +70,6 @@ export default function App() {
         </Route>
       </Routes>
       
-      <AuthUserType SendDataToApp={GettingDataFromAuth} />
       
 
     </Router>
