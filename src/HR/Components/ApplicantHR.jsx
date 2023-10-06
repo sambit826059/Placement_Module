@@ -3,9 +3,15 @@ import React from 'react'
 export default function ApplicantHR() {
   return (
     <>
-      <div className='bg-red-200 p-10 rounded-md h-[42vw]'>
-         ApplicantHR
-      </div>
+      <div className='overflow-hidden '>
+      <div className=" h-[100vh]   ">
+          <div className="bg-red-200 h-[100vh]  rounded p-10">
+          Applicant Details
+
+          </div>
+
+    </div>
+   </div>
     </>
 
 
