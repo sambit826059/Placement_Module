@@ -109,3 +109,5 @@ export default function JobPostingByHR() {
     </>
   )
 }
+
+// got a bug in the updation of posts 
