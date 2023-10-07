@@ -20,10 +20,10 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
         <>
         <div className='  overflow-hidden '>
         
-            <div class="[sidenav]   fit-content h-[100vh] grid justify-evenly gap-[2rem] p-2  ">
+            <div className="[sidenav]   fit-content h-[100vh] grid justify-evenly gap-[2rem] p-2  ">
                <div className=" bg-gray-200 rounded-xl p-1 py-10">
-                    <div class="topToglleMenuButton before:absolute before:bg-black before:left-10"></div>
-                        <div class="navElements py-1 px-2">
+                    <div className="topToglleMenuButton before:absolute before:bg-black before:left-10"></div>
+                        <div className="navElements py-1 px-2">
                             <ul className='grid justify-evenly gap-[1rem]'>
                                 <NavLink  to="/HR/home" className={({isActive}) => ` ${ !isActive ? "  hover:bg-gray-300 " : " bg-green-300     hover:bg-green-200  "} hover:bg-green-200  px-10 py-1 max-sm:py-3  max-sm:text-2xl rounded `}> <li >Dashbord</li></NavLink> 
                                 <NavLink to="/HR/jobposting" className={({isActive}) => ` ${ !isActive ? "  hover:bg-gray-300 " : " bg-green-300     hover:bg-green-200  "} hover:bg-green-200  px-10 py-1 max-sm:py-3  max-sm:text-2xl rounded  `}> <li >Job Posting </li></NavLink>
