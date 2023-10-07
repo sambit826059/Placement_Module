@@ -67,40 +67,49 @@ export default function Authentication(props) {
 
   return (
     <>
-     <div className='p-12 py-[5rem] border-2 border-black rounded-xl bg-white '>
-       <h1 className={`  ${selectedUserType ? 'text-green-400': 'text-white'}`}>hello {selectedUserType} </h1> 
+     <div className='bg-white rounded-r-xl'>
 
-        Welcome
-          <br />
-          <label htmlFor="dropdown">User type:</label>
+        <div className='p-12   '>
+        <h1 className='text-center text-2xl'>User Login</h1>
+
+        <label htmlFor="dropdown">User type:</label>
           <select id="dropdown" name="dropdown"value={selectedValue} onChange={(e)=>setSelectedValue(e.target.value)}>
              <option value="NormalUser">Not Selected</option>
             <option value="Student">Student</option>
             <option value="HR">HR</option>
             <option value="Admin">Admin</option>
-        </select>
+          </select>
+
+
+          <form action="/signup" method="post" onSubmit={HandleFormSubmit}>
+              
+              <input className='bg-gray-100 p-2' type='text' placeholder='Username' value={UserName} onChange={(e)=>setUserName(e.target.value)} name='username'/>
+              <br />
+              <input className='bg-gray-100' placeholder='Password' type='password' value={PassWord} onChange={(e)=>setPassWord(e.target.value) } name='password'/><br />
+
+                {
+                  props.SignUpformUse &&
+                      <>
+                          <label htmlFor="">Re Password</label><br/> 
+                          <input className='bg-gray-200' type='password'value={RePassWord} onChange={(e)=>setRePassWord(e.target.value)} name='Re_password'/><br />
+
+                      </>
+                  }
+
+
+              <Link to={Entry_Link}> <button className='bg-purple-500 px-10  rounded-full py-1 mt-2 text-white' type='submit'>Login</button></Link>
+         
+          <h6> {props.EntryWayMessage} </h6>
+          <Link to={props.Links}> <button className='p-4'>{props.LinkButtonName}</button></Link>
+          </form>
+              
+
+
+        </div>
+          
 
                 
-            <form action="/signup" method="post" onSubmit={HandleFormSubmit}>
-                <label htmlFor="">Username</label><br/>
-                <input className='bg-gray-200' type='text' value={UserName} onChange={(e)=>setUserName(e.target.value)} name='username'/>
-                <br />
-                <label htmlFor="">Password</label><br/>
-                <input className='bg-gray-200' type='password' value={PassWord} onChange={(e)=>setPassWord(e.target.value) } name='password'/><br />
-
-       {
-        props.SignUpformUse &&
-            <>
-                <label htmlFor="">Re Password</label><br/> 
-                <input className='bg-gray-200' type='password'value={RePassWord} onChange={(e)=>setRePassWord(e.target.value)} name='Re_password'/><br />
-
-            </>
-        }
-                <Link to={Entry_Link}> <button className='bg-gray-200 p-4 mt-2' type='submit'>Submit</button></Link>
            
-            <h6> {props.EntryWayMessage} </h6>
-            <Link to={props.Links}> <button className='p-4'>{props.LinkButtonName}</button></Link>
-            </form>
         </div>
     </>
   )
