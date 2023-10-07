@@ -50,7 +50,7 @@ export default function JobPostingByHR() {
     <>
       <div className=' overflow-hidden h-[100vh]   rounded-md'>
         <div className="   fit-content h-[100vh] grid   p-2 ">
-          <div className=" bg-yellow-200 rounded-xl px-12 py-20">
+          <div className=" bg-yellow-200 rounded-xl px-12 py-20 overflow-y-scroll">
 
             {/* things started from here  */}
             <div className='grid  grid-cols-[20%,80%]  justify-evenly gap-8'>
@@ -60,8 +60,8 @@ export default function JobPostingByHR() {
               </div>
 
              {AddPosting &&
-              <div className='bg-gray-400 p-10 rounded'>
-                <form className='grid grid-cols-[28%,50%] justify-start gap-4' onSubmit={(e) => e.preventDefault()}>
+              <div className='bg-gray-400 p-10 rounded '>
+                <form className='grid grid-cols-[28%,50%] justify-start gap-4 ' onSubmit={(e) => e.preventDefault()}>
                   
                   <div className=''>
                     <label htmlFor="JobTitle">job title</label><br />
@@ -83,7 +83,7 @@ export default function JobPostingByHR() {
                   <input className='rounded h-10 w-[15vw] p-2' type="text" name="text" id="Qualifications<"  placeholder=''/>
                   </div>
 
-                  <button onClick={addTodo} type='submit'>{editIndex !== null ? 'Update' : 'Add'}</button>
+                 { task&&  <button className='bg-gray-100 rounded-3xl  py-2' onClick={addTodo} type='submit'>{editIndex !== null ? 'Update' : 'Add'}</button> }
 
                 </form>
               </div>           
@@ -94,7 +94,7 @@ export default function JobPostingByHR() {
             {/* --------------------------- */}
                                        
                                   <ul >
-                                    {todos.map((todo, index) => (
+                                    {todos.slice().reverse().map((todo, index) => (
                                       <li  key={index} className={` group flex ${todo.completed ? 'completed' : ''}`}>
                                         <span className='bg-gray-200 p-12 mt-5 border' onClick={() => toggleComplete(index)}>Your Post:- {todo.text}</span>
                                         <button className='bg-green-400 m-4 px-5 hidden group-hover:block' onClick={() => editTodo(index)}>Edit</button>
