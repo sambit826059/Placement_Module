@@ -67,50 +67,47 @@ export default function Authentication(props) {
 
   return (
     <>
-     <div className='bg-white rounded-r-xl'>
+     <div className=' rounded-r-xl grid  place-content-center text-center '>
 
-        <div className='p-12   '>
-        <h1 className='text-center text-2xl'>User Login</h1>
+        <div className='  gap-7 grid   '>
 
-        <label htmlFor="dropdown">User type:</label>
-          <select id="dropdown" name="dropdown"value={selectedValue} onChange={(e)=>setSelectedValue(e.target.value)}>
-             <option value="NormalUser">Not Selected</option>
-            <option value="Student">Student</option>
-            <option value="HR">HR</option>
-            <option value="Admin">Admin</option>
-          </select>
+             <h1 className=' text-center text-2xl'>User Login</h1>
 
-
-          <form action="/signup" method="post" onSubmit={HandleFormSubmit}>
-              
-              <input className='bg-gray-100 p-2' type='text' placeholder='Username' value={UserName} onChange={(e)=>setUserName(e.target.value)} name='username'/>
-              <br />
-              <input className='bg-gray-100' placeholder='Password' type='password' value={PassWord} onChange={(e)=>setPassWord(e.target.value) } name='password'/><br />
-
-                {
-                  props.SignUpformUse &&
-                      <>
-                          <label htmlFor="">Re Password</label><br/> 
-                          <input className='bg-gray-200' type='password'value={RePassWord} onChange={(e)=>setRePassWord(e.target.value)} name='Re_password'/><br />
-
-                      </>
-                  }
+            <div>
+              <label htmlFor="dropdown">User type:</label>
+                <select id="dropdown" name="dropdown"value={selectedValue} onChange={(e)=>setSelectedValue(e.target.value)}>
+                  <option value="NormalUser">Not Selected</option>
+                  <option value="Student">Student</option>
+                  <option value="HR">HR</option>
+                  <option value="Admin">Admin</option>
+                </select>
 
 
-              <Link to={Entry_Link}> <button className='bg-purple-500 px-10  rounded-full py-1 mt-2 text-white shadow-lg shadow-purple-500/50' type='submit'>Login</button></Link>
-         
-          <h6> {props.EntryWayMessage} </h6>
-          <Link to={props.Links}> <button className='p-4'>{props.LinkButtonName}</button></Link>
-          </form>
-              
+                <form  className='grid  place-content-center   gap-6 ' action="/signup" method="post" onSubmit={HandleFormSubmit}>
+                    
+                    <input className='bg-gray-100 py-2 px-4 rounded font-light ' type='text' placeholder='Username' value={UserName} onChange={(e)=>setUserName(e.target.value)} name='username'/>
+                    <input className='bg-gray-100  py-2 px-4 rounded font-light ' placeholder='Password' type='password' value={PassWord} onChange={(e)=>setPassWord(e.target.value) } name='password'/>
 
+                      {
+                        props.SignUpformUse &&
+                            <>
+                                <label htmlFor="">Re Password</label>
+                                <input className='bg-gray-200' type='password'value={RePassWord} onChange={(e)=>setRePassWord(e.target.value)} name='Re_password'/><br />
+
+                            </>
+                        }
+                        
+
+                        <h6 className='underline hover:no-underline text-gray-500 font-light text-[0.9rem]'> Forget Password/Username</h6>
+
+                      <Link to={Entry_Link} className='bg-purple-500  rounded-full py-1  text-white shadow-lg shadow-purple-500/50 '> <button  type='submit'>Login</button></Link>
+                    
+                      <Link to={props.Links}> <button className='text-gray-400 hover:text-gray-600'>{props.EntryWayMessage}</button></Link>
+                </form>
+            </div>
 
         </div>
-          
-
-                
-           
-        </div>
+     </div>
     </>
   )
 }
