@@ -53,9 +53,9 @@ export default function JobPostingByHR() {
           <div className=" bg-yellow-200 rounded-xl px-12 py-20 overflow-y-scroll">
 
             {/* things started from here  */}
-            <div className='grid  grid-cols-[20%,80%]  justify-evenly gap-8'>
-              <div>
-              <button onClick={()=>(setAddPosting(!AddPosting))} className='bg-gray-100 rounded-3xl px-10 py-2'> {AddPosting ? 'Discard' : 'Add Posting'}</button>
+            <div className='grid  grid-cols-[20%,80%]  justify-evenly gap-8 '>
+              <div className={`   `}>
+              <button onClick={()=>(setAddPosting(!AddPosting))} className={`   bg-gray-100 rounded-3xl px-10 py-2`}> {AddPosting ? 'Discard' : 'Add Posting'}</button>
 
               </div>
 
@@ -92,16 +92,19 @@ export default function JobPostingByHR() {
             </div>
 
             {/* --------------------------- */}
-                                       
-                                  <ul className='flex flex-col-reverse' >
+                           {
+                            AddPosting || todos &&
+                                      
+                                  <ul className=' mt-10 flex flex-col-reverse justify-between gap-5' >
                                     {todos.slice().map((todo, index) => (
-                                      <li  key={index} className={` group flex ${todo.completed ? 'completed' : ''}`}>
+                                      <li  key={index} className={` group flex p-4  rounded-md  bg-gray-100 mb-4 ${todo.completed ? 'completed' : ''}`}>
                                         <span className='bg-gray-200 p-12 mt-5 border' onClick={() => toggleComplete(index)}> [{index + 1}] {todo.text}</span>
-                                        <button className='bg-green-400 m-4 px-5 hidden group-hover:block' onClick={() => editTodo(index)}>Edit</button>
-                                        <button className='bg-red-400 m-4 px-5 hidden group-hover:block ' onClick={() => deleteTodo(index)}>Delete</button>
+                                        <button className='absolute mt-[-2.5rem] left-[80vw] bg-green-400 m-4 px-5 hidden group-hover:block' onClick={() => editTodo(index)}>Edit</button>
+                                        <button className=' absolute mt-[-2.5rem] left-[85vw] rounded bg-red-400 m-4 px-5 hidden group-hover:block ' onClick={() => deleteTodo(index)}>Delete</button>
                                       </li>
                                     ))}
                                   </ul>
+                           }        
           </div>
         </div>
         
@@ -110,4 +113,3 @@ export default function JobPostingByHR() {
   )
 }
 
-// got a bug in the updation of posts 
