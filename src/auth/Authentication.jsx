@@ -97,7 +97,7 @@ export default function Authentication(props) {
                   }
 
 
-              <Link to={Entry_Link}> <button className='bg-purple-500 px-10  rounded-full py-1 mt-2 text-white' type='submit'>Login</button></Link>
+              <Link to={Entry_Link}> <button className='bg-purple-500 px-10  rounded-full py-1 mt-2 text-white shadow-lg shadow-purple-500/50' type='submit'>Login</button></Link>
          
           <h6> {props.EntryWayMessage} </h6>
           <Link to={props.Links}> <button className='p-4'>{props.LinkButtonName}</button></Link>
