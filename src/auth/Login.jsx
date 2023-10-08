@@ -11,13 +11,14 @@ export default function Login() {
   return (
 
     <>
-    <div className=" grid grid-cols-[70%,30%] gap-0  place-content-center h-[100vh] p-[20rem] bg-gradient-to-r from-purple-700 via-pink-600 to-purple-400 ">
+    <div className=" grid    place-content-center h-[100vh] p-[20rem] bg-gradient-to-r from-purple-700 via-pink-600 to-purple-400 ">
       
-      <div>
-        <img className='rounded-l-xl' src={LoginSideImage} alt="" />
+      <div className=' grid rounded  bg-white grid-cols-[70%,30%] gap-0 shadow-lg shadow-black-500/50'>
+        <img className='rounded' src={LoginSideImage} alt="" />
+        <Authentication LinkButtonName={'SignUp'} Links={'/SignUp'} EntryWayMessage={EntryWayMessage_SignUp} />
+
       </div>
       
-      <Authentication LinkButtonName={'SignUp'} Links={'/SignUp'} EntryWayMessage={EntryWayMessage_SignUp} />
       
     </div>
     
