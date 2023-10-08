@@ -6,14 +6,14 @@ import LoginSideImage from "./LoginPageUsedImg.svg";
 export default function Login() {
   document.title = "Login [PlacementModule]";
 
-  const  EntryWayMessage_SignUp= "Create a account"
+  const  EntryWayMessage_SignUp= "Create an account"
 
   return (
 
     <>
-    <div className=" grid    place-content-center h-[100vh] p-[20rem] bg-gradient-to-r from-purple-700 via-pink-600 to-purple-400 ">
+    <div className=" grid  place-content-center h-[100vh]  bg-gradient-to-r from-purple-700 via-pink-600 to-purple-400 ">
       
-      <div className=' grid rounded  bg-white grid-cols-[70%,30%] gap-0 shadow-lg shadow-black-500/50'>
+      <div className=' grid rounded gap-3 bg-white grid-cols-[70%,30%] shadow-lg shadow-black-500/50 pr-5'>
         <img className='rounded' src={LoginSideImage} alt="" />
         <Authentication LinkButtonName={'SignUp'} Links={'/SignUp'} EntryWayMessage={EntryWayMessage_SignUp} />
 
