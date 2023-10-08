@@ -93,10 +93,10 @@ export default function JobPostingByHR() {
 
             {/* --------------------------- */}
                                        
-                                  <ul >
-                                    {todos.slice().reverse().map((todo, index) => (
+                                  <ul className='flex flex-col-reverse' >
+                                    {todos.slice().map((todo, index) => (
                                       <li  key={index} className={` group flex ${todo.completed ? 'completed' : ''}`}>
-                                        <span className='bg-gray-200 p-12 mt-5 border' onClick={() => toggleComplete(index)}>Your Post:-{todos.length - index} {todo.text}</span>
+                                        <span className='bg-gray-200 p-12 mt-5 border' onClick={() => toggleComplete(index)}> [{index + 1}] {todo.text}</span>
                                         <button className='bg-green-400 m-4 px-5 hidden group-hover:block' onClick={() => editTodo(index)}>Edit</button>
                                         <button className='bg-red-400 m-4 px-5 hidden group-hover:block ' onClick={() => deleteTodo(index)}>Delete</button>
                                       </li>
