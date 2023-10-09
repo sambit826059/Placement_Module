@@ -1,50 +1,51 @@
 import React, { useState } from 'react'
 
 export default function JobPostingByHR() {
+
   const [AddPosting, setAddPosting] = useState(false)
+ const [data, setData] = useState([]);
+  const [newRow, setNewRow] = useState({ JobTitle: '', EmploymentType: '' });
+  const [editingRowId, setEditingRowId] = useState(null);
 
-  
-  const [todos, setTodos] = useState([]);
-  const [task, setTask] = useState('');
-  const [editIndex, setEditIndex] = useState(null);
+  const addRow = () => {
+    
+    if (newRow.JobTitle.trim() === '' || newRow.EmploymentType.trim() === '') return;
 
-  const addTodo = () => {
-    setAddPosting(false)
+    if (editingRowId !== null) {
+      const updatedData = data.map((row) =>
+        row.id === editingRowId ? { ...row, ...newRow } : row
+      );
+      setData(updatedData);
+      setEditingRowId(null);
+      setAddPosting(false);
+    } else {
+      setAddPosting(false);
+      const row = {
+        id: Date.now(),
+        ...newRow,
+      };
+      setData([...data, row]);
+    }
 
-    if (task.trim() !== '') {
-      if (editIndex !== null) {
-        const updatedTodos = [...todos];
-        updatedTodos[editIndex] = { text: task, completed: false };
-        setTodos(updatedTodos);
-        setEditIndex(null);
-      } else {
-        // Add new task
-        setTodos([...todos, { text: task, completed: false }]);
-      }
-      setTask('');
+    setNewRow({ JobTitle: '', EmploymentType: '' });
+  };
+
+  const deleteRow = (rowId) => {
+    const updatedData = data.filter((row) => row.id !== rowId);
+    setData(updatedData);
+  };
+
+  const editRow = (rowId) => {
+    setAddPosting(true);
+
+    const rowToEdit = data.find((row) => row.id === rowId);
+    if (rowToEdit) {
+      setNewRow({ ...rowToEdit });
+      setEditingRowId(rowId);
     }
   };
 
-  const editTodo = (index) => {
-    setAddPosting(true)
-    const taskToEdit = todos[index];
-    setTask(taskToEdit.text);
-    setEditIndex(index);
-  };
-
-  const deleteTodo = (index) => {
-    const updatedTodos = [...todos];
-    updatedTodos.splice(index, 1);
-    setTodos(updatedTodos);
-    setEditIndex(null); // Clear the edit index if a task is deleted
-  };
-
-  const toggleComplete = (index) => {
-    const updatedTodos = [...todos];
-    updatedTodos[index].completed = !updatedTodos[index].completed;
-    setTodos(updatedTodos);
-  };
-
+  
   
   return (
     <>
@@ -55,57 +56,65 @@ export default function JobPostingByHR() {
             {/* things started from here  */}
             <div className='grid  grid-cols-[20%,80%]  justify-evenly gap-8 '>
               <div className={`   `}>
-              <button onClick={()=>(setAddPosting(!AddPosting))} className={`   bg-gray-100 rounded-3xl px-10 py-2`}> {AddPosting ? 'Discard' : 'Add Posting'}</button>
+              <button onClick={() => {setAddPosting(!AddPosting); setEditingRowId(null);}} className={`   bg-gray-100 rounded-3xl px-10 py-2`}> {AddPosting ? 'Discard' : 'Add Posting'}</button>
 
               </div>
 
              {AddPosting &&
-              <div className='bg-gray-400 p-10 rounded '>
-                <form className='grid grid-cols-[28%,50%] justify-start gap-4 ' onSubmit={(e) => e.preventDefault()}>
-                  
-                  <div className=''>
-                    <label htmlFor="JobTitle">job title</label><br />
-                    <input className='rounded h-10 w-[15vw] p-2 'value={task} onChange={(e) => setTask(e.target.value)} type="text" name="JobTitle" id="JobTitle"  placeholder=''/>
-                  </div>
+              <div className='bg-gray-400 p-10 rounded '>        
+                              <div className='flex justify-evenly'>
 
-                  <div>
-                  <label htmlFor="EmploymentType<">Employment Type</label><br />
-                  <input className='rounded h-10 w-[15vw] p-2' type="text" name="JobTitle" id="EmploymentType<"  placeholder=''/>
-                  </div>
-
-                  <div>
-                    <label htmlFor="JobDisc">Job discription</label>
-                    <textarea className='rounded max-h-[12vw] p-2' rows={'4'} cols={'72'} name="text" id="JobDisc" ></textarea>
-                  </div>
-
-                  <div>
-                  <label htmlFor="Qualifications<">Qualifications</label><br />
-                  <input className='rounded h-10 w-[15vw] p-2' type="text" name="text" id="Qualifications<"  placeholder=''/>
-                  </div>
-
-                 { task&&  <button className='bg-gray-100 rounded-3xl  py-2' onClick={addTodo} type='submit'>{editIndex !== null ? 'Update' : 'Add'}</button> }
-
-                </form>
+                                <input
+                                    className='rounded h-10 w-[15vw] p-2 font-light '
+                                    type="text"
+                                    placeholder="Job Title"
+                                    value={newRow.JobTitle}
+                                    onChange={(e) => setNewRow({ ...newRow, JobTitle: e.target.value })}
+                                  />
+                                  <input
+                                  className='rounded h-10 w-[15vw] p-2 font-light'
+                                    type="text"
+                                    placeholder="Employment Type"
+                                    value={newRow.EmploymentType}
+                                    onChange={(e) => setNewRow({ ...newRow, EmploymentType: e.target.value })}
+                                  />
+                                  <button className='bg-gray-400  rounded' onClick={addRow}>
+                                    {editingRowId !== null ? 'Update Post' : 'Add Post'}
+                                  </button>
+                              </div>                      
               </div>           
-             }
+             } 
                 
             </div>
 
             {/* --------------------------- */}
-                           {
-                            AddPosting || todos &&
-                                      
-                                  <ul className=' mt-10 flex flex-col-reverse justify-between gap-5' >
-                                    {todos.slice().map((todo, index) => (
-                                      <li  key={index} className={` group flex p-4  rounded-md  bg-gray-100 mb-4 ${todo.completed ? 'completed' : ''}`}>
-                                        <span className='bg-gray-200 p-12 mt-5 border' onClick={() => toggleComplete(index)}> [{index + 1}] {todo.text}</span>
-                                        <button className='absolute mt-[-2.5rem] left-[80vw] bg-green-400 m-4 px-5 hidden group-hover:block' onClick={() => editTodo(index)}>Edit</button>
-                                        <button className=' absolute mt-[-2.5rem] left-[85vw] rounded bg-red-400 m-4 px-5 hidden group-hover:block ' onClick={() => deleteTodo(index)}>Delete</button>
-                                      </li>
+                           
+
+  
+                                 { !AddPosting&&
+                                    <div className='mt-10 flex flex-col-reverse justify-between gap-1'>
+                                    {data.map((row) => (
+                                      <div key={row.id} className='group mb-4'>
+                                        <div className='group-hover:visible invisible flex ml-auto justify-end gap-0'>
+                                          <button className='bg-green-400 px-5 group-hover:block' onClick={() => editRow(row.id)}>Edit</button>
+                                          <button className='bg-red-400 px-5 group-hover:block' onClick={() => deleteRow(row.id)}>Delete</button>
+                                        </div>
+                                        <div className='flex p-10 rounded-md bg-gray-100'>
+                                          <div className='bg-gray-200 p-10'>
+                                            <div>{row.JobTitle}</div>
+                                            <div>{row.EmploymentType}</div>
+                                          </div>
+                                        </div>
+                                      </div>
                                     ))}
-                                  </ul>
-                           }        
+                                    </div> 
+                                }
+                                
+                                
+                           
+                              
           </div>
+          
         </div>
         
     </div>
