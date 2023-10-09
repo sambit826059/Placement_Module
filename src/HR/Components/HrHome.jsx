@@ -1,6 +1,8 @@
 import React from 'react'
 
 export default function HrHome() {
+  document.title = "HR Dashboard -[Placement Module]";
+
   return (
     <>
   
