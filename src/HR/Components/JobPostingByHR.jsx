@@ -4,12 +4,12 @@ export default function JobPostingByHR() {
 
   const [AddPosting, setAddPosting] = useState(false)
  const [data, setData] = useState([]);
-  const [newRow, setNewRow] = useState({ JobTitle: '', EmploymentType: '' });
+  const [newRow, setNewRow] = useState({ JobTitle: '', EmploymentType: '' ,jobDescription:'' });
   const [editingRowId, setEditingRowId] = useState(null);
 
   const addRow = () => {
     
-    if (newRow.JobTitle.trim() === '' || newRow.EmploymentType.trim() === '') return;
+    if (newRow.JobTitle.trim() === '' || newRow.EmploymentType.trim() === '' ||newRow.jobDescription.trim() === '' ) return;
 
     if (editingRowId !== null) {
       const updatedData = data.map((row) =>
@@ -27,7 +27,7 @@ export default function JobPostingByHR() {
       setData([...data, row]);
     }
 
-    setNewRow({ JobTitle: '', EmploymentType: '' });
+    setNewRow({ JobTitle: '', EmploymentType: '',jobDescription:''  });
   };
 
   const deleteRow = (rowId) => {
@@ -60,59 +60,74 @@ export default function JobPostingByHR() {
 
               </div>
 
-             {AddPosting &&
-              <div className='bg-gray-400 p-10 rounded '>        
-                              <div className='flex justify-evenly'>
+             
+              <div className={`${AddPosting ? "block":"hidden"}  bg-orange-300 p-10 rounded `}>        
+                              <div className=' flex flex-col   gap-4  justify-start'>
 
-                                <input
-                                    className='rounded h-10 w-[15vw] p-2 font-light '
-                                    type="text"
-                                    placeholder="Job Title"
-                                    value={newRow.JobTitle}
-                                    onChange={(e) => setNewRow({ ...newRow, JobTitle: e.target.value })}
-                                  />
+                                  <div className='grid grid-cols-[50%,50%] justify-end gap-4'>
+                                    
                                   <input
-                                  className='rounded h-10 w-[15vw] p-2 font-light'
-                                    type="text"
-                                    placeholder="Employment Type"
-                                    value={newRow.EmploymentType}
-                                    onChange={(e) => setNewRow({ ...newRow, EmploymentType: e.target.value })}
-                                  />
-                                  <button className='bg-gray-400  rounded' onClick={addRow}>
-                                    {editingRowId !== null ? 'Update Post' : 'Add Post'}
+                                      className='rounded h-10 w-[15vw] p-2 font-light '
+                                      type="text"
+                                      placeholder="Job Title"
+                                      value={newRow.JobTitle}
+                                      onChange={(e) => setNewRow({ ...newRow, JobTitle: e.target.value })}
+                                    />
+                                    <input
+                                    className='rounded h-10 w-[15vw] p-2 font-light'
+                                      type="text"
+                                      placeholder="Employment Type"
+                                      value={newRow.EmploymentType}
+                                      onChange={(e) => setNewRow({ ...newRow, EmploymentType: e.target.value })}
+                                    />
+
+                                    <textarea 
+                                    className='rounded w-[22vw] p-2 max-w[24vw] font-light '
+                                    value={newRow.jobDescription}
+                                    onChange={(e) => setNewRow({ ...newRow, jobDescription: e.target.value })}
+                                    placeholder="Job Discription"
+                                    name=""
+                                    id=""
+                                      />
+
+                                  </div>
+                                  <div>
+                                  <button className={`${ (newRow.EmploymentType)&&(newRow.JobTitle) ? 'visible': 'invisible'} bg-gray-200  rounded-full py-2 px-12 `} onClick={addRow}>
+                                      {editingRowId !== null ? 'Update Post' : 'Add Post'}
                                   </button>
+
+                                  </div>
+                                 
                               </div>                      
-              </div>           
-             } 
-                
-            </div>
+               </div>           
+         </div>
 
             {/* --------------------------- */}
-                           
-
-  
                                  { !AddPosting&&
-                                    <div className='mt-10 flex flex-col-reverse justify-between gap-1'>
+                                    <div className='mt-10 flex flex-col-reverse justify-between gap-0'>
                                     {data.map((row) => (
                                       <div key={row.id} className='group mb-4'>
                                         <div className='group-hover:visible invisible flex ml-auto justify-end gap-0'>
                                           <button className='bg-green-400 px-5 group-hover:block' onClick={() => editRow(row.id)}>Edit</button>
                                           <button className='bg-red-400 px-5 group-hover:block' onClick={() => deleteRow(row.id)}>Delete</button>
                                         </div>
-                                        <div className='flex p-10 rounded-md bg-gray-100'>
-                                          <div className='bg-gray-200 p-10'>
+
+                                        <div className='flex  p-[1rem]   rounded-[0.6rem] bg-gray-100'>
+                                          <div className='bg-gray-200 p-10 px-14 rounded-[0.4rem]  '>img</div>
+
+                                          <div className='mr-auto bg-green-00 p-5  w-[42rem]' >
                                             <div>{row.JobTitle}</div>
                                             <div>{row.EmploymentType}</div>
+                                            <div>{row.jobDescription}</div>
+                                          </div>
+                                          <div className='flex   m-auto mb-1 '>
+                                           <button className=' px-7 rounded-full border border-black'>See</button>
                                           </div>
                                         </div>
                                       </div>
                                     ))}
                                     </div> 
-                                }
-                                
-                                
-                           
-                              
+                                }                    
           </div>
           
         </div>
