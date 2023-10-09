@@ -71,7 +71,7 @@ export default function Authentication(props) {
 
         <div className='  gap-7 grid   '>
 
-             <h1 className=' text-center text-2xl'>User Login</h1>
+             <h1 className=' text-center text-2xl'>User {props.LinkButtonName}</h1>
 
             <div>
               <label htmlFor="dropdown">User type:</label>
@@ -91,16 +91,18 @@ export default function Authentication(props) {
                       {
                         props.SignUpformUse &&
                             <>
-                                <label htmlFor="">Re Password</label>
-                                <input className='bg-gray-200' type='password'value={RePassWord} onChange={(e)=>setRePassWord(e.target.value)} name='Re_password'/><br />
+                                <input className='bg-gray-100  py-2 px-4 rounded font-light ' placeholder='Re Password' type='password'value={RePassWord} onChange={(e)=>setRePassWord(e.target.value)} name='Re_password'/>
 
                             </>
                         }
                         
-
+                      {
+                        !props.SignUpformUse&&
                         <h6 className='underline hover:no-underline text-gray-500 font-light text-[0.9rem]'> Forget Password/Username</h6>
 
-                      <Link to={Entry_Link} className='bg-purple-500  rounded-full py-1  text-white shadow-lg shadow-purple-500/50 '> <button  type='submit'>Login</button></Link>
+                      }
+
+                      <Link to={Entry_Link} className={`${props.SignUpformUse ? "bg-[#FF6D5C] shadow-orange-600/50   ": " bg-purple-500 shadow-purple-500/50 "}  rounded-full py-2 text-[1.14rem]  text-white shadow-lg  `}> <button  type='submit'>{props.LinkButtonName}</button></Link>
                     
                       <Link to={props.Links}> <button className='text-gray-400 hover:text-gray-600'>{props.EntryWayMessage}</button></Link>
                 </form>
