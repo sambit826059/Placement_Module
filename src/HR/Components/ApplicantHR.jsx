@@ -1,6 +1,8 @@
 import React from 'react'
 
 export default function ApplicantHR() {
+  document.title = "HR applicant -[placement Module]";
+
   return (
     <>
      
