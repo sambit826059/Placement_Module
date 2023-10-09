@@ -7,14 +7,14 @@ export default function UserEntry() {
 
   return (
     <>
-    <div className=" bg-gray-900 h-[100vh] bg-gradient-to-r from-purple-700 via-pink-600 to-purple-400">
-        <div className="  p-10  ">
-            <h1 className='text-[7rem] text-white'>Placement Module</h1>
+    <div className="  h-[100vh] ">
+        <div className="  p-10 px-14 ">
+            <h1 className='text-[7rem] text-[#FF6D5C]'>Placement Module</h1>
         
 
-        <div className=" flex gap-0  max-w-max   ">
-        <Link to={'/SignUp'}> <button className='bg-gray-200 p-3 px-6 '>Sign Up</button></Link>
-       <Link to={'/Login'}> <button className=' p-3 px-6 text-gray-100 hover:bg-gray-700 '>Login</button></Link>
+        <div className=" flex gap-6  max-w-max   ">
+        <Link to={'/SignUp'}> <button className='bg-[#875DE1] shadow-lg shadow-purple-500/40 text-[1.4rem] text-white rounded-full  p-2 px-14'>Sign Up</button></Link>
+       <Link to={'/Login'}> <button className='  text-[#F26857] hover:bg-[#F26857] text-[1.4rem] hover:text-white border-2 border-[#F26857] rounded-full  p-2 px-14'>Login</button></Link>
        </div>
         </div>
     </div>
