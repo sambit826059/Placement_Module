@@ -5,6 +5,8 @@ import HrNavBar from './HrNavBar'
 import Footer from '../../Student/Components/Footer'
 
 export default function HrLandingLayout() {
+  document.title = "HR -[Placement Module]";
+
   return (
     <>
     <div className="grid grid-cols-[14%,85%] gap-2 overflow-hidden px-4  ">    
