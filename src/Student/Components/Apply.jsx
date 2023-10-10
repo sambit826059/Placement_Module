@@ -4,6 +4,8 @@ import NavBar from "./NavBar";
 
 
 export default function Apply() {
+  document.title = "Apply [Placement Module]";
+
   return (
     <>
 

@@ -5,13 +5,13 @@ import AdBanner from './AdBanner';
 import AdResources from './AdResources';
 
 export default function Home() {
+  document.title = "Student Home [Placement Module]";
   return (
     <>
     <div className="  px-7 md:px-10">
-    <SliderHeadBanner/>
+       <SliderHeadBanner/>
       <AdBanner/>
       <AdResources/>
-
       <GoToTop/>
     </div>
 
