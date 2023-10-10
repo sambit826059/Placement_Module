@@ -29,7 +29,7 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
                         <input type="checkbox" id='nav-toggle'  className="checkbox-sb group/check hidden"/>
                         <label htmlFor="nav-toggle" className={`label-sb  rounded ${OpenNavMenu ? 'hover:bg-red-200':'hover:bg-gray-300'}  `}>
                             <img onClick={()=>setOpenNavMenu(!OpenNavMenu)} className=' p-2   transition-all duration-00 ease-in cursor-pointer' src={ OpenNavMenu ? [CloseMenu] : [OpenMenu]}   alt="menu-open" />
-
+8
                         </label>
                      
                     </div>
@@ -38,7 +38,7 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
                         
                         <ul className=' grid  gap-2  sm:flex max-sm:gap-0  sm:gap-4 sm:justify-end  '>
 
-                            <NavLink  to="/Student/Home" className={({isActive}) => ` ${ !isActive ? "bg-gray-00  hover:bg-gray-300 " : "bg-gray-00  underline underline-offset-8  hover:bg-gray-300 "}   px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}> <li >Home</li></NavLink> 
+                            <NavLink  to="/Student/Home" className={ ({isActive}) => `  ${ !isActive ? " bg-gray-00  hover:bg-gray-300  after:absolute  after:p-10  after:w-10 before:w-10 " : "bg-gray-00  underline underline-offset-8  hover:bg-gray-300 "}   px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}> <li >Home</li></NavLink> 
 
 
                             <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3  '>
