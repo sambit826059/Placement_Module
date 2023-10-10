@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import EditPostVector from "../HrImgORicon/EditPostVector.svg";
+import DeletePostVector from "../HrImgORicon/DeletePostVector.svg";
 
 export default function JobPostingByHR() {
 
@@ -6,7 +8,7 @@ export default function JobPostingByHR() {
  const [data, setData] = useState([]);
   const [newRow, setNewRow] = useState({ JobTitle: '', EmploymentType: '' ,jobDescription:'' });
   const [editingRowId, setEditingRowId] = useState(null);
-
+  const [deletedRowId, setDeletedRowId] = useState(null);
   const addRow = () => {
     
     if (newRow.JobTitle.trim() === '' || newRow.EmploymentType.trim() === '' ||newRow.jobDescription.trim() === '' ) return;
@@ -31,8 +33,12 @@ export default function JobPostingByHR() {
   };
 
   const deleteRow = (rowId) => {
-    const updatedData = data.filter((row) => row.id !== rowId);
-    setData(updatedData);
+    setDeletedRowId(rowId); 
+    setTimeout(() => {
+      const updatedData = data.filter((row) => row.id !== rowId);
+      setData(updatedData);
+      setDeletedRowId(null);
+    }, 300); 
   };
 
   const editRow = (rowId) => {
@@ -46,10 +52,7 @@ export default function JobPostingByHR() {
   };
 
 
-  // setAddPosting(false);
-  // setEditingRowId(null);
-  
-  // setNewRow({ JobTitle: '', EmploymentType: '', jobDescription: '' });
+ 
   
   
   return (
@@ -114,10 +117,10 @@ export default function JobPostingByHR() {
                                  { !AddPosting&&
                                     <div className='mt-10 flex flex-col-reverse justify-between gap-2'>
                                     {data.map((row) => (
-                                      <div key={row.id} className='group  bg-green-00'>
-                                        <div className='group-hover:visible invisible flex ml-auto justify-end gap-0'>
-                                          <button className='bg-green-400 px-5 group-hover:block' onClick={() => editRow(row.id)}>Edit</button>
-                                          <button className='bg-red-400 px-5 group-hover:block' onClick={() => deleteRow(row.id)}>Delete</button>
+                                      <div key={row.id} className= {`${ row.id === deletedRowId ? '   opacity-2 transition ease-in-out  delay-150 -translate-y-1 scale-95 duration-300' : ''} group `} >
+                                        <div className='group-hover:visible invisible flex ml-auto justify-end px-10 gap-3'>
+                                          <button className='    bg-green-300 rounded p-2 group-hover:block ' onClick={() => editRow(row.id)}> <img src={EditPostVector} alt="" /> </button>
+                                          <button className='bg-red-300 p-2 rounded group-hover:block' onClick={() => deleteRow(row.id)}> <img src={DeletePostVector} alt="" /></button>
                                         </div>
 
                                         <div className=' md:flex  p-[1rem]   rounded-[0.6rem] bg-gray-100'>
