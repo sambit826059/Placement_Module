@@ -45,6 +45,11 @@ export default function JobPostingByHR() {
     }
   };
 
+
+  // setAddPosting(false);
+  // setEditingRowId(null);
+  
+  // setNewRow({ JobTitle: '', EmploymentType: '', jobDescription: '' });
   
   
   return (
@@ -53,10 +58,13 @@ export default function JobPostingByHR() {
         <div className="   fit-content h-[100vh] grid   p-2 ">
           <div className=" bg-yellow-200 rounded-xl px-12 py-20 overflow-y-scroll">
 
-            {/* things started from here  */}
             <div className='grid  grid-cols-[20%,80%]  justify-evenly gap-8 '>
               <div className={`   `}>
-              <button onClick={() => {setAddPosting(!AddPosting); setEditingRowId(null);}} className={`   bg-gray-100 rounded-3xl px-10 py-2`}> {AddPosting ? 'Discard' : 'Add Posting'}</button>
+              <button
+               onClick={() => {setAddPosting(!AddPosting);
+                              setEditingRowId(null);
+                              setNewRow({ JobTitle: '', EmploymentType: '', jobDescription: '' });
+                            }} className={`   bg-gray-100 rounded-3xl px-10 py-2`}> {AddPosting ? 'Discard' : 'Add Posting'}</button>
 
               </div>
 
@@ -104,20 +112,20 @@ export default function JobPostingByHR() {
 
             {/* --------------------------- */}
                                  { !AddPosting&&
-                                    <div className='mt-10 flex flex-col-reverse justify-between gap-0'>
+                                    <div className='mt-10 flex flex-col-reverse justify-between gap-2'>
                                     {data.map((row) => (
-                                      <div key={row.id} className='group mb-4'>
+                                      <div key={row.id} className='group  bg-green-00'>
                                         <div className='group-hover:visible invisible flex ml-auto justify-end gap-0'>
                                           <button className='bg-green-400 px-5 group-hover:block' onClick={() => editRow(row.id)}>Edit</button>
                                           <button className='bg-red-400 px-5 group-hover:block' onClick={() => deleteRow(row.id)}>Delete</button>
                                         </div>
 
-                                        <div className='flex  p-[1rem]   rounded-[0.6rem] bg-gray-100'>
+                                        <div className=' md:flex  p-[1rem]   rounded-[0.6rem] bg-gray-100'>
                                           <div className='bg-gray-200 p-10 px-14 rounded-[0.4rem]  '>img</div>
 
                                           <div className='mr-auto bg-green-00 p-5  w-[42rem]' >
-                                            <div>{row.JobTitle}</div>
-                                            <div>{row.EmploymentType}</div>
+                                            <ul className='list-disc md:grid grid-flow-col justify-start gap-8'> <li>Job Title : {row.JobTitle}</li> <li> Employment Type : {row.EmploymentType}</li></ul>
+                                            <div> </div>
                                             <div>{row.jobDescription}</div>
                                           </div>
                                           <div className='flex   m-auto mb-1 '>
