@@ -6,7 +6,7 @@ import SignUppageUsedImg from "./SignUppageUsedImg.svg";
 export default function SignUp() {
   document.title = "New User..! [PlacementModule]";
 
-  const  EntryWayMessage_login="Already have a account";
+  const  EntryWayMessage_login="Already have an account";
   return (
     <>
     <div className=" grid  place-content-center h-[100vh]  bg-gradient-to-r from-purple-700 via-pink-600 to-purple-400 ">
