@@ -6,14 +6,13 @@ export default function ApplicantHR() {
   return (
     <>
      
-   <div className=' overflow-hidden h-[100vh]   rounded-md'>
-        <div className="   fit-content h-[100vh] grid   p-2 ">
-          <div className=" bg-red-200  rounded-xl p-1 py-10">
-          Applicant Details
+     <div className="overflow-hidden rounded-sm border border-stroke bg-white shadow-default dark:border-stroke-dark dark:bg-box-dark">
+        <div className="   fit-content grid   p-2 ">
+          <div className=" bg-yellow-200  p-1 py-10">
+            Applicant Details
 
           </div>
         </div>
-        
     </div>
     </>
 
