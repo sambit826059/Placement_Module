@@ -35,15 +35,16 @@ export default function HrHeadder() {
                     <ul className="flex items-center gap-4 2xsm:gap-4">
                       <li>
                         <button>
-                            <div className='   group flex active:flex-row-reverse bg-gray-300 p-[0.2rem] px-[0.28rem]  w-[3.4rem] group  justify-items-stretch rounded-full'>
-                                <div className='transition duration-300 ease-in-out shadow-2xl bg-gray-100  visible p-[0.71rem] w-2   rounded-full'></div>
-                            </div>
-                            
+                                {/* Dark mode button */}
+                               <label className="    ">
+                                    <input type="checkbox" className="sr-only  peer " />
+                                    <span className="peer peer-checked:bg-green-300  cursor-pointer relative inline-block w-[3.2em] h-[1.8em] transition-all duration-300 ease-in-out bg-gray-300  rounded-full          peer-active:before:w-[2.5em]  peer-checked:before:left-[1.5rem]  before:absolute before:content-inside before:top-[0.25rem] before:left-[0.3rem] before:w-[1.3em] before:h-[1.3em] before:bg-white  before:rounded-full  before:transform before:transition-transform before:duration-300 before:ease-in-out  "></span>
+                                </label>                            
                         </button>
                      </li>
                         <li className='grid justify-items-stretch gap-0'>
                             <div className='text-[1rem] justify-self-end'>userNames</div>
-                            <div className='text-gray-500 font-light text-[0.8rem] justify-self-start'>Company name</div>
+                            <div className='text-gray-500 font-light text-[0.8rem] justify-self-start '>Company name</div>
                         </li>
                         <li className='bg-gray-200 p-2 rounded-full'>img</li>
                     </ul>
