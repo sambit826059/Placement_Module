@@ -6,7 +6,7 @@ export default function JobPostingByHR() {
 
   const [AddPosting, setAddPosting] = useState(false)
  const [data, setData] = useState([]);
-  const [newRow, setNewRow] = useState({ JobTitle: '', EmploymentType: '' ,jobDescription:'' });
+  const [newRow, setNewRow] = useState({ JobTitle: '', EmploymentType: '' ,jobDescription:'' ,CompanyLogoImage:''});
   const [editingRowId, setEditingRowId] = useState(null);
   const [deletedRowId, setDeletedRowId] = useState(null);
   const addRow = () => {
@@ -29,7 +29,7 @@ export default function JobPostingByHR() {
       setData([...data, row]);
     }
 
-    setNewRow({ JobTitle: '', EmploymentType: '',jobDescription:''  });
+    setNewRow({ JobTitle: '', EmploymentType: '',jobDescription:'' ,CompanyLogoImage:'' });
   };
 
   const deleteRow = (rowId) => {
@@ -52,8 +52,23 @@ export default function JobPostingByHR() {
   };
 
 
+  
+
+ const CompanyLogUpload=(e)=>{
+  const file = e.target.files[0];
+   if(file){
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      setNewRow({ ...newRow, CompanyLogoImage: e.target.result })
+
+    };
+    reader.readAsDataURL(file);
+
+  }
+ };
  
   
+
   
   return (
     <>
@@ -68,7 +83,7 @@ export default function JobPostingByHR() {
       <button
       onClick={() => {setAddPosting(!AddPosting);
                       setEditingRowId(null);
-                      setNewRow({ JobTitle: '', EmploymentType: '', jobDescription: '' });
+                      setNewRow({ JobTitle: '', EmploymentType: '', jobDescription: '',CompanyLogoImage:'' });
                     }} className={`   bg-gray-100 rounded-3xl px-10 py-2`}> {AddPosting ? 'Discard' : 'Add Posting'}</button>
 
       </div>
@@ -103,6 +118,27 @@ export default function JobPostingByHR() {
                             id=""
                               />
 
+                              <abbr title="Upload Here">
+                                  <label htmlFor="image-upload">
+                                    Upload here
+                                  </label>
+
+                                  <input
+                                    id="image-upload"
+                                    type="file"
+                                    accept="image/*"
+                                    style={{ display: "none" }}
+                                    onChange={CompanyLogUpload}
+                                  />
+                                 
+                               </abbr>   
+
+                               {newRow.CompanyLogoImage && (
+                                  <img src={newRow.CompanyLogoImage} alt=" your Uploaded Image" />
+                                )}                                 
+                                  
+                                   
+
                           </div>
                           <div>
                           <button className={`${ (newRow.EmploymentType)&&(newRow.JobTitle) ? 'visible': 'invisible'} bg-gray-200  rounded-full py-2 px-12 `} onClick={addRow}>
@@ -126,7 +162,11 @@ export default function JobPostingByHR() {
                                 </div>
 
                                 <div className=' md:flex  p-[1rem]   rounded-[0.6rem] bg-gray-100'>
-                                  <div className='bg-gray-200 p-10 px-14 rounded-[0.4rem]  '>img</div>
+                                  <div className='bg-gray-200 p-2 h-[8rem] w-[8rem]  rounded-[0.4rem]  '>
+                                      {row.CompanyLogoImage && (
+                                        <img className='object-contain' src={row.CompanyLogoImage} alt=" Company Logo" />
+                                      )} 
+                                  </div>
 
                                   <div className='mr-auto bg-green-00 p-5  w-[42rem]' >
                                     <ul className='list-disc md:grid grid-flow-col justify-start gap-8'> <li>Job Title : {row.JobTitle}</li> <li> Employment Type : {row.EmploymentType}</li></ul>
