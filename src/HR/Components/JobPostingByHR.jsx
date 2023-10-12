@@ -74,7 +74,7 @@ export default function JobPostingByHR() {
       </div>
 
     
-      <div className={`${AddPosting ? "block":"hidden"}  bg-orange-300 p-10 rounded `}>        
+      <div className={`${AddPosting ? "block":"hidden"}  bg-gray-300 p-10 rounded `}>        
                       <div className=' flex flex-col   gap-4  justify-start'>
 
                           <div className='grid grid-cols-[50%,50%] justify-end gap-4'>
