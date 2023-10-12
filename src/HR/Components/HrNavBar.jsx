@@ -10,7 +10,6 @@ import {
     Route,
     NavLink
   } from "react-router-dom";
-import { toBeDisabled } from '@testing-library/jest-dom/matchers';
 
 function HrNavBar() {
 
@@ -36,30 +35,30 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
                 <h3 className="mb-4 ml-4 text-sm font-semibold ">Menu</h3>
                 <ul className="mb-6 flex flex-col gap-1.5">
                     {/* nav links */}
-                              <li> <NavLink  to="/HR/home" className={({isActive}) => ` ${ !isActive ? "  hover:bg-gray-300 " : " bg-green-300     hover:bg-green-200  "} group relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4 `}> Dashbord</NavLink> </li>
-                              <li > <NavLink to="/HR/jobposting" className={({isActive}) => ` ${ !isActive ? "  hover:bg-gray-300 " : " bg-green-300     hover:bg-green-200  "} group relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4 `}> Job Posting </NavLink></li>
-                                <li > <NavLink to="/HR/Applicants" className={({isActive}) => ` ${ !isActive ? "  hover:bg-gray-300 " : " bg-green-300     hover:bg-green-200  "} group relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4  `}> Applicants </NavLink></li>
-                                <li className='group relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4'>
+                              <li> <NavLink  to="/HR/home" className={({isActive}) => ` ${ !isActive ? "  hover:bg-opacity-10 hover:bg-gray-100 text-white  " : " bg-green-300   text-black hover:text-black  hover:bg-green-200  "}  group relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4 `}> Dashboard</NavLink> </li>
+                              <li > <NavLink to="/HR/jobposting" className={({isActive}) => ` ${ !isActive ? "  hover:bg-opacity-10 hover:bg-gray-100 text-white " : " bg-green-300   text-black hover:text-black   hover:bg-green-200  "} group relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4 `}> Job Posting </NavLink></li>
+                                <li > <NavLink to="/HR/Applicants" className={({isActive}) => ` ${ !isActive ? "  hover:bg-opacity-10 hover:bg-gray-100 text-white" : " bg-green-300   text-black hover:text-black   hover:bg-green-200  "} group relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4  `}> Applicants </NavLink></li>
+                                <li className='group  hover:bg-opacity-10 hover:bg-gray-100 text-white relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4'>
                                     <DropBoxLink LinkName={"Profile"}  Option_2={"Logout" }  />
                                 </li>           
                 </ul>
               </div>
 
               <div>
-                <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
+                <h3 className="mb-4 ml-4 text-sm font-semibold ">
                    OTHERS
                 </h3>
 
                 <ul className="mb-6 flex flex-col gap-1.5">
-                    <li className='group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-'>
+                    <li className='group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-'>
                     Lorem
                     </li>
 
-                    <li className='group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-'>
+                    <li className='group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-'>
                     Lorem
                     </li>
 
-                    <li className='group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-'>
+                    <li className='group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-'>
                     Lorem
                     </li>
                 </ul>
