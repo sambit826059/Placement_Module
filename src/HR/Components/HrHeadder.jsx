@@ -42,7 +42,7 @@ export default function HrHeadder() {
                                 {/* Dark mode button */}
                                <label className="    ">
                                     <input  onClick={() => {  setTheaMode(!theaMode) }}type="checkbox" className="sr-only  peer " />
-                                    <span className="peer peer-checked:bg-green-300  cursor-pointer relative inline-block w-[3.2em] h-[1.8em] transition-all duration-300 ease-in-out bg-gray-300  rounded-full          peer-active:before:w-[2.5em]  peer-checked:before:left-[1.6rem]  before:absolute before:content-inside before:top-[0.25rem] before:left-[0.3rem] before:w-[1.3em] before:h-[1.3em] before:bg-white  before:rounded-full  before:transform before:transition-transform before:duration-300 before:ease-in-out  "></span>
+                                    <span className="peer peer-checked:bg-green-300  cursor-pointer relative inline-block w-[3.2em] h-[1.8em] transition-all duration-300 ease-in-out bg-gray-300  rounded-full          peer-active:before:w-[]  peer-checked:before:left-[1.6rem]  before:absolute before:content-inside before:top-[0.25rem] before:left-[0.3rem] before:w-[1.3em] before:h-[1.3em] before:bg-white  before:rounded-full  before:transform before:transition-transform before:duration-300 before:ease-in-out  "></span>
                                 </label>                            
                         </button>
                      </li>
