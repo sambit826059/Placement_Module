@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SearchIcon from "../HrImgORicon/SearchIconHrDash.svg";
 export default function HrHeadder() {
+
+    const [theaMode, setTheaMode] = useState(false);
+
+
   return (
     <>
-        <header className="sticky top-0 z-999 flex w-full bg-white drop-shadow-md drop-shadow-gray-100 border-b border-slate-300  ">
+        <header className={`sticky top-0 z-999 flex w-full  ${theaMode ? 'bg-slate-700' : 'bg-white'} drop-shadow-md drop-shadow-gray-100 border-b border-slate-300  `}>
              <div className="flex flex-grow items-center justify-between py-4 px-4 shadow-2 md:px-6 2xl:px-11">
                 <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
                     <button className="z-99999 block rounded-sm border border-stroke bg-white p-1.5 shadow-sm   lg:hidden">
@@ -34,11 +38,11 @@ export default function HrHeadder() {
                 <div className="flex items-center gap-3 2xsm:gap-7">
                     <ul className="flex items-center gap-4 2xsm:gap-4">
                       <li>
-                        <button>
+                      <button>
                                 {/* Dark mode button */}
                                <label className="    ">
-                                    <input type="checkbox" className="sr-only  peer " />
-                                    <span className="peer peer-checked:bg-green-300  cursor-pointer relative inline-block w-[3.2em] h-[1.8em] transition-all duration-300 ease-in-out bg-gray-300  rounded-full          peer-active:before:w-[2.5em]  peer-checked:before:left-[1.5rem]  before:absolute before:content-inside before:top-[0.25rem] before:left-[0.3rem] before:w-[1.3em] before:h-[1.3em] before:bg-white  before:rounded-full  before:transform before:transition-transform before:duration-300 before:ease-in-out  "></span>
+                                    <input  onClick={() => {  setTheaMode(!theaMode) }}type="checkbox" className="sr-only  peer " />
+                                    <span className="peer peer-checked:bg-green-300  cursor-pointer relative inline-block w-[3.2em] h-[1.8em] transition-all duration-300 ease-in-out bg-gray-300  rounded-full          peer-active:before:w-[2.5em]  peer-checked:before:left-[1.6rem]  before:absolute before:content-inside before:top-[0.25rem] before:left-[0.3rem] before:w-[1.3em] before:h-[1.3em] before:bg-white  before:rounded-full  before:transform before:transition-transform before:duration-300 before:ease-in-out  "></span>
                                 </label>                            
                         </button>
                      </li>
