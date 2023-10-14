@@ -78,109 +78,109 @@ export default function JobPostingByHR() {
         <div className="   fit-content grid   p-2 ">
             <div className=" bg-yellow-00 rounded-xl px-12 py-20 ">
 
-    <div className='grid  grid-cols-[20%,80%]  justify-evenly gap-8 '>
-      <div className={`   `}>
-      <button
-      onClick={() => {setAddPosting(!AddPosting);
-                      setEditingRowId(null);
-                      setNewRow({ JobTitle: '', EmploymentType: '', jobDescription: '',CompanyLogoImage:'' });
-                    }} className={`   bg-gray-100 rounded-3xl px-10 py-2`}> {AddPosting ? 'Discard' : 'Add Posting'}</button>
+            <div className='grid  grid-cols-[20%,80%]  justify-evenly gap-8 '>
+              <div className={`   `}>
+              <button
+              onClick={() => {setAddPosting(!AddPosting);
+                              setEditingRowId(null);
+                              setNewRow({ JobTitle: '', EmploymentType: '', jobDescription: '',CompanyLogoImage:'' });
+                            }} className={`   bg-gray-100 rounded-3xl px-10 py-2`}> {AddPosting ? 'Discard' : 'Add Posting'}</button>
 
-      </div>
+              </div>
 
-    
-      <div className={`${AddPosting ? "block":"hidden"}  bg-gray-300 p-10 rounded `}>        
-                      <div className=' flex flex-col   gap-4  justify-start'>
+            
+              <div className={`${AddPosting ? "block":"hidden"}  bg-gray-300 p-10 rounded `}>        
+                              <div className=' flex flex-col   gap-4  justify-start'>
 
-                          <div className='grid grid-cols-[50%,50%] justify-end gap-4'>
-                            
-                          <input
-                              className='rounded h-10 w-[15vw] p-2 font-light '
-                              type="text"
-                              placeholder="Job Title"
-                              value={newRow.JobTitle}
-                              onChange={(e) => setNewRow({ ...newRow, JobTitle: e.target.value })}
-                            />
-                            <input
-                            className='rounded h-10 w-[15vw] p-2 font-light'
-                              type="text"
-                              placeholder="Employment Type"
-                              value={newRow.EmploymentType}
-                              onChange={(e) => setNewRow({ ...newRow, EmploymentType: e.target.value })}
-                            />
-
-                            <textarea 
-                            className='rounded w-[22vw] p-2 max-w[24vw] font-light '
-                            value={newRow.jobDescription}
-                            onChange={(e) => setNewRow({ ...newRow, jobDescription: e.target.value })}
-                            placeholder="Job Discription"
-                            name=""
-                            id=""
-                              />
-
-                              <abbr title="Upload Here">
-                                  <label htmlFor="image-upload">
-                                    Upload here
-                                  </label>
-
+                                  <div className='grid grid-cols-[50%,50%] justify-end gap-4'>
+                                    
                                   <input
-                                    id="image-upload"
-                                    type="file"
-                                    accept="image/*"
-                                    style={{ display: "none" }}
-                                    onChange={CompanyLogUpload}
-                                  />
-                                 
-                               </abbr>   
+                                      className='rounded h-10 w-[15vw] p-2 font-light '
+                                      type="text"
+                                      placeholder="Job Title"
+                                      value={newRow.JobTitle}
+                                      onChange={(e) => setNewRow({ ...newRow, JobTitle: e.target.value })}
+                                    />
+                                    <input
+                                    className='rounded h-10 w-[15vw] p-2 font-light'
+                                      type="text"
+                                      placeholder="Employment Type"
+                                      value={newRow.EmploymentType}
+                                      onChange={(e) => setNewRow({ ...newRow, EmploymentType: e.target.value })}
+                                    />
 
-                               {newRow.CompanyLogoImage && (
-                                  <img src={newRow.CompanyLogoImage} alt=" your Uploaded Image" />
-                                )}                                 
-                                  
-                                   
+                                    <textarea 
+                                    className='rounded w-[22vw] p-2 max-w[24vw] font-light '
+                                    value={newRow.jobDescription}
+                                    onChange={(e) => setNewRow({ ...newRow, jobDescription: e.target.value })}
+                                    placeholder="Job Discription"
+                                    name=""
+                                    id=""
+                                      />
 
-                          </div>
-                          <div>
-                          <button className={`${ (newRow.EmploymentType)&&(newRow.JobTitle) ? 'visible': 'invisible'} bg-gray-200  rounded-full py-2 px-12 `} onClick={addRow}>
-                              {editingRowId !== null ? 'Update Post' : 'Add Post'}
-                          </button>
+                                      <abbr title="Upload Here">
+                                          <label htmlFor="image-upload">
+                                            Upload here
+                                          </label>
 
-                          </div>
-                        
-                      </div>                      
-      </div>           
-    </div>
+                                          <input
+                                            id="image-upload"
+                                            type="file"
+                                            accept="image/*"
+                                            style={{ display: "none" }}
+                                            onChange={CompanyLogUpload}
+                                          />
+                                        
+                                      </abbr>   
 
-    {/* --------------------------- */}
-                        { !AddPosting&&
-                            <div className='mt-10 flex flex-col-reverse justify-between gap-2'>
-                            {data.map((row) => (
-                              <div key={row.id} className= {`${ row.id === deletedRowId ? '   opacity-2 transition ease-in-out  delay-150 -translate-y-1 scale-95 duration-300' : ''} group `} >
-                                <div className='group-hover:visible invisible flex ml-auto justify-end px-10 gap-3'>
-                                  <button className='    bg-green-300 rounded p-2 group-hover:block ' onClick={() => editRow(row.id)}> <img src={EditPostVector} alt="" /> </button>
-                                  <button className='bg-red-300 p-2 rounded group-hover:block' onClick={() => deleteRow(row.id)}> <img src={DeletePostVector} alt="" /></button>
-                                </div>
+                                      {newRow.CompanyLogoImage && (
+                                          <img src={newRow.CompanyLogoImage} alt=" your Uploaded Image" />
+                                        )}                                 
+                                          
+                                          
 
-                                <div className=' md:flex  p-[1rem]   rounded-[0.6rem] bg-gray-100'>
-                                  <div className='bg-gray-200 p-2 h-[8rem] w-[8rem]  rounded-[0.4rem]  '>
-                                      {row.CompanyLogoImage && (
-                                        <img className='object-contain' src={row.CompanyLogoImage} alt=" Company Logo" />
-                                      )} 
                                   </div>
+                                  <div>
+                                  <button className={`${ (newRow.EmploymentType)&&(newRow.JobTitle) ? 'visible': 'invisible'} bg-gray-200  rounded-full py-2 px-12 `} onClick={addRow}>
+                                      {editingRowId !== null ? 'Update Post' : 'Add Post'}
+                                  </button>
 
-                                  <div className='mr-auto bg-green-00 p-5  w-[42rem]' >
-                                    <ul className='list-disc md:grid grid-flow-col justify-start gap-8'> <li>Job Title : {row.JobTitle}</li> <li> Employment Type : {row.EmploymentType}</li></ul>
-                                    <div> </div>
-                                    <div>{row.jobDescription}</div>
                                   </div>
-                                  <div className='flex   m-auto mb-1 '>
-                                  <button className=' px-7 rounded-full border border-black'>See</button>
-                                  </div>
-                                </div>
-                              </div>
-                            ))}
-                            </div> 
-                        }                    
+                                
+                              </div>                      
+              </div>           
+            </div>
+
+            {/* --------------------------- */}
+                                { !AddPosting&&
+                                    <div className='mt-10 flex flex-col-reverse justify-between gap-2'>
+                                    {data.map((row) => (
+                                      <div key={row.id} className= {`${ row.id === deletedRowId ? '   opacity-2 transition ease-in-out  delay-150 -translate-y-1 scale-95 duration-300' : ''} group `} >
+                                        <div className='group-hover:visible invisible flex ml-auto justify-end px-10 gap-3'>
+                                          <button className='    bg-green-300 rounded p-2 group-hover:block ' onClick={() => editRow(row.id)}> <img src={EditPostVector} alt="" /> </button>
+                                          <button className='bg-red-300 p-2 rounded group-hover:block' onClick={() => deleteRow(row.id)}> <img src={DeletePostVector} alt="" /></button>
+                                        </div>
+
+                                        <div className=' md:flex  p-[1rem]   rounded-[0.6rem] bg-gray-100'>
+                                          <div className='bg-gray-200 p-2 h-[8rem] w-[8rem]  rounded-[0.4rem]  '>
+                                              {row.CompanyLogoImage && (
+                                                <img className='object-contain' src={row.CompanyLogoImage} alt=" Company Logo" />
+                                              )} 
+                                          </div>
+
+                                          <div className='mr-auto bg-green-00 p-5  w-[42rem]' >
+                                            <ul className='list-disc md:grid grid-flow-col justify-start gap-8'> <li>Job Title : {row.JobTitle}</li> <li> Employment Type : {row.EmploymentType}</li></ul>
+                                            <div> </div>
+                                            <div>{row.jobDescription}</div>
+                                          </div>
+                                          <div className='flex   m-auto mb-1 '>
+                                          <button className=' px-7 rounded-full border border-black'>See</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    ))}
+                                    </div> 
+                                }                    
             </div>
          </div>
     </div>
