@@ -1,28 +1,66 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import landing_pM from "./blend_backImage.png";
+import InappLoader from '../Loaders/InappLoader';
 
-// blend_backImage
+
+const getData= () => new Promise((resolve, reject) => {
+  setTimeout(() => {
+  }, 20000);
+})
+
 export default function UserEntry() {
   document.title = "Placement Module ";
 
+  const [isLoading,setisLoading]=useState(false);
+  const[data,setdata]=useState([]);
+  
+  useEffect(() => {
+    setisLoading(true);
+    setTimeout(()=>{
+    setisLoading(false)
+    },300)
+}, [])
+
   return (
     <>
-    <img className='bg-cover bg-center w-screen h-screen  fixed opacity-110   ' src={landing_pM} alt="bgImg" />
+      {
+        isLoading ?
+        <InappLoader/>
 
-    <div className="  bg-gradient-to-r fixed flex items-center justify-center w-screen h-screen " >
+        :
+        <div>
+        <img className='bg-cover bg-center w-screen h-screen  fixed opacity-110   ' src={landing_pM} alt="bgImg" />
+        <marquee className="fixed bg-white" behavior="" direction="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
+        quibusdam ducimus pariatur rem asperiores facilis dolorem repellendus eveniet enim obcaecati corporis eius distinctio consequatur
+          eligendi aliquam veritatis reiciendis quae possimus assumenda quaerat deleniti voluptate. Maxime, quos. Earum, officia quis? Enim 
+          voluptas dolor amet omnis.
+          </marquee>
 
-        <div className="  grid justify-evenly gap-10 opacity-110  p-10 ">
-              <h1 className=' text-[3rem] sm:text-[7rem] text-white text-center '>Placement Module</h1>
+        <div className="  bg-gradient-to-r fixed flex items-center justify-center w-screen h-screen " >
 
-              <hr className='  border-t-2  mx-auto my-auto w-[75vw] sm:w-[34rem]' />
+            <div className="  grid justify-evenly gap-10 opacity-110  p-10 ">
+                  <h1 className=' text-[3rem] sm:text-[7rem] text-white text-center '>Placement Module</h1>
 
-              <div className=" flex flex-wrap justify-center  text-center gap-10 py-[2rem] ">
-                    <Link to={'/SignUp'}> <button className=' bg-white hover:opacity-80  sm:h-[6rem]  sm:w-[18rem] shadow-lg text-[1.4rem]   p-2 px-14 font-light    '>Signup</button></Link>
-                  <Link to={'/Login'}> <button className=' hover:bg-purple-500 border-2 hover:opacity-80 sm:h-[6rem]  sm:w-[18rem] shadow-2xl     text-[1.4rem]   p-2 px-14 font-light text-white'>Login</button></Link>
+                  <hr className='  border-t-2  mx-auto my-auto w-[75vw] sm:w-[34rem]' />
+
+                  <div className=" flex flex-wrap justify-center  text-center gap-10 py-[2rem] ">
+                        <Link to={'/SignUp'}> <button className=' bg-white hover:opacity-80  sm:h-[6rem]  sm:w-[18rem] shadow-lg text-[1.4rem]   p-2 px-14 font-light    '>Signup</button></Link>
+                      <Link to={'/Login'}> <button className=' hover:bg-purple-500 border-2 hover:opacity-80 sm:h-[6rem]  sm:w-[18rem] shadow-2xl     text-[1.4rem]   p-2 px-14 font-light text-white'>Login</button></Link>
+                </div>
             </div>
         </div>
-    </div>
+        </div>
+
+      }
+
+      
+     
     </>
   )
 }
+
+
+
+
+
