@@ -4,16 +4,12 @@ import landing_pM from "./blend_backImage.png";
 import InappLoader from '../Loaders/InappLoader';
 
 
-const getData= () => new Promise((resolve, reject) => {
-  setTimeout(() => {
-  }, 20000);
-})
 
 export default function UserEntry() {
   document.title = "Placement Module ";
 
   const [isLoading,setisLoading]=useState(false);
-  const[data,setdata]=useState([]);
+  
   
   useEffect(() => {
     setisLoading(true);
