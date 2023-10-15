@@ -21,8 +21,8 @@ export default function DropBoxLink(props) {
                               {  !props.ProfileImg&&    <a href="#"  onClick={()=>setOpenDropBox(!OpenDropBox)}>  {props.LinkName}</a>}
 
                                 { props.ProfileImg && 
-                                  <div className='bg-slate-700 rounded-full p-4'>
-                                    <img src={props.ProfileImg } alt="" />
+                                  <div className='bg-slate-700  p-[0rem]  rounded-full [0.4rem] flex items-center justify-center'>
+                                    <img className='object-center rounded-full h-10 w-10 object-cover' src={props.ProfileImg } alt="" />
 
                                   </div>
                                 }
