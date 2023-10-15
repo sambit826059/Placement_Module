@@ -1,23 +1,10 @@
-// Navbar.js
-import React, { useState } from 'react'
-import OpenMenu from "../../Student/ImgORicon/menuOpen.svg";
-import CloseMenu from "../../Student/ImgORicon/closeMenu.svg";
-import DropBoxLink from '../../Student/Components/DropBoxLink';
-
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    NavLink
-  } from "react-router-dom";
-
-function HrNavBar() {
-
-const [OpenNavMenu,setOpenNavMenu]=useState(false);
-
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+export default function AdminNav() {
   return (
-        <>
-        <aside className=' translate-x-[-15rem] md:lg:translate-x-0  absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-slate-700 duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0  '>
+    <>
+    
+    <aside className=' translate-x-[-15rem] md:lg:translate-x-0  absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-slate-700 duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0  '>
             
             <div className='flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5'>
                 <NavLink>
@@ -35,9 +22,9 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
                 <h3 className="mb-4 ml-4 text-sm font-semibold ">Menu</h3>
                 <ul className="mb-6 flex flex-col gap-1.5">
                     {/* nav links */}
-                              <li> <NavLink  to="/HR/home" className={({isActive}) => ` ${ !isActive ? "  hover:bg-opacity-10 hover:bg-gray-100 text-white  " : " bg-green-300   text-black hover:text-black  hover:bg-green-200  "}  group relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4 `}> Dashboard</NavLink> </li>
-                              <li > <NavLink to="/HR/jobposting" className={({isActive}) => ` ${ !isActive ? "  hover:bg-opacity-10 hover:bg-gray-100 text-white " : " bg-green-300   text-black hover:text-black   hover:bg-green-200  "} group relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4 `}> Job Posting </NavLink></li>
-                                <li > <NavLink to="/HR/Applicants" className={({isActive}) => ` ${ !isActive ? "  hover:bg-opacity-10 hover:bg-gray-100 text-white" : " bg-green-300   text-black hover:text-black   hover:bg-green-200  "} group relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4  `}> Applicants </NavLink></li>
+                              <li> <NavLink  to="/admin" className={({isActive}) => ` ${ !isActive ? "  hover:bg-opacity-10 hover:bg-gray-100 text-white  " : " bg-green-300   text-black hover:text-black  hover:bg-green-200  "}  group relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4 text-center `}> Dashboard</NavLink> </li>
+                              <li > <NavLink to="/" className={({isActive}) => ` ${ !isActive ? "  hover:bg-opacity-10 hover:bg-gray-100 text-white " : " bg-green-300   text-black hover:text-black   hover:bg-green-200  "} group relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4 `}> HR Management </NavLink></li>
+                                <li > <NavLink to="/" className={({isActive}) => ` ${ !isActive ? "  hover:bg-opacity-10 hover:bg-gray-100 text-white" : " bg-green-300   text-black hover:text-black   hover:bg-green-200  "} group relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4  `}> Student </NavLink></li>
                                 <li className='group  hover:bg-opacity-10 hover:bg-gray-100 text-white relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4'>
                                 </li>           
                 </ul>
@@ -68,8 +55,7 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
             
          
         </aside>
-        </>
-    );
-}
 
-export default HrNavBar;
+    </>
+  )
+}

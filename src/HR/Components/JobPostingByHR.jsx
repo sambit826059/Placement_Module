@@ -74,17 +74,17 @@ export default function JobPostingByHR() {
     <>
       
 
-    <div className="overflow-hidden rounded-sm border border-stroke bg-white shadow-default dark:border-stroke-dark dark:bg-box-dark">
-        <div className="   fit-content grid   p-2 ">
-            <div className=" bg-yellow-00 rounded-xl px-12 py-20 ">
+    <div className="overflow-hidden rounded-sm border border-stroke bg-white shadow-default dark:border-stroke-dark dark:bg-box-dark ">
+        <div className=" py-10 px-5  md:p-10  ">
+            <div className=" bg-yellow-00 rounded-xl   ">
 
-            <div className='grid  grid-cols-[20%,80%]  justify-evenly gap-8 '>
+            <div className=' flex-row justify-between   sm:grid md: grid-cols-[20%,80%]  sm:justify-evenly gap-8 '>
               <div className={`   `}>
               <button
               onClick={() => {setAddPosting(!AddPosting);
                               setEditingRowId(null);
                               setNewRow({ JobTitle: '', EmploymentType: '', jobDescription: '',CompanyLogoImage:'' });
-                            }} className={`   bg-gray-100 rounded-3xl px-10 py-2`}> {AddPosting ? 'Discard' : 'Add Posting'}</button>
+                            }} className={` w-max bg-gray-100 rounded-3xl px-10 py-2`}> {AddPosting ? 'Discard' : 'Add Posting'}</button>
 
               </div>
 
@@ -153,7 +153,7 @@ export default function JobPostingByHR() {
 
             {/* --------------------------- */}
                                 { !AddPosting&&
-                                    <div className='mt-10 flex flex-col-reverse justify-between gap-2'>
+                                    <div className='mt-10 flex flex-col-reverse justify-between gap-2 '>
                                     {data.map((row) => (
                                       <div key={row.id} className= {`${ row.id === deletedRowId ? '   opacity-2 transition ease-in-out  delay-150 -translate-y-1 scale-95 duration-300' : ''} group `} >
                                         <div className='group-hover:visible invisible flex ml-auto justify-end px-10 gap-3'>
@@ -161,20 +161,20 @@ export default function JobPostingByHR() {
                                           <button className='bg-red-300 p-2 rounded group-hover:block' onClick={() => deleteRow(row.id)}> <img src={DeletePostVector} alt="" /></button>
                                         </div>
 
-                                        <div className=' md:flex  p-[1rem]   rounded-[0.6rem] bg-gray-100'>
-                                          <div className='bg-gray-200 p-2 h-[8rem] w-[8rem]  rounded-[0.4rem]  '>
+                                        <div className=' grid  max max-sm:gap-4  sm:flex  p-[1rem]   rounded-[0.6rem] bg-gray-100'>
+                                          <div className='bg-gray-200  p-2 sm:h-[8rem] sm:w-[8rem]  rounded-[0.4rem] flex items-center justify-center'>
                                               {row.CompanyLogoImage && (
-                                                <img className='object-contain' src={row.CompanyLogoImage} alt=" Company Logo" />
+                                                <img className=' max-sm:h-[25vw]  max-sm:w-[85vw]  object-center object-cover' src={row.CompanyLogoImage} alt=" Company Logo" />
                                               )} 
                                           </div>
 
-                                          <div className='mr-auto bg-green-00 p-5  w-[42rem]' >
+                                          <div className='mr-auto bg-green-00 px-7 ' >
                                             <ul className='list-disc md:grid grid-flow-col justify-start gap-8'> <li>Job Title : {row.JobTitle}</li> <li> Employment Type : {row.EmploymentType}</li></ul>
                                             <div> </div>
                                             <div>{row.jobDescription}</div>
                                           </div>
-                                          <div className='flex   m-auto mb-1 '>
-                                          <button className=' px-7 rounded-full border border-black'>See</button>
+                                          <div className=' m-auto mb-1 justify-self-end'>
+                                          <button className='  px-7 rounded-full border border-black '>See</button>
                                           </div>
                                         </div>
                                       </div>
