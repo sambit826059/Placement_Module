@@ -4,16 +4,13 @@ import Authentication from './Authentication';
 import LoginSideImage from "./LoginPageUsedImg.svg";
 import InappLoader from '../Loaders/InappLoader';
 
-const getData= () => new Promise((resolve, reject) => {
-  setTimeout(() => {
-  }, 20000);
-})
+
 
 export default function Login() {
   document.title = "Login [PlacementModule]";
 
   const [isLoading,setisLoading]=useState(false);
-  const[data,setdata]=useState([]);
+  
   
   useEffect(() => {
     setisLoading(true);

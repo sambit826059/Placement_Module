@@ -5,16 +5,12 @@ import SignUppageUsedImg from "./SignUppageUsedImg.svg";
 import InappLoader from '../Loaders/InappLoader';
 
 
-const getData= () => new Promise((resolve, reject) => {
-  setTimeout(() => {
-  }, 20000);
-})
 
 export default function SignUp() {
   document.title = "New User..! [PlacementModule]";
 
   const [isLoading,setisLoading]=useState(false);
-  const[data,setdata]=useState([]);
+  
   
   useEffect(() => {
     setisLoading(true);
