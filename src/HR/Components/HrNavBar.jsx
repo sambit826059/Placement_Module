@@ -73,20 +73,3 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
 }
 
 export default HrNavBar;
-
-
-{/* <div className="[sidenav]   fit-content h-[100vh] grid justify-evenly gap-[2rem] p-2  ">
-               <div className=" bg-gray-200 rounded-xl p-1 py-10">
-                    <div className="topToglleMenuButton before:absolute before:bg-black before:left-10"></div>
-                        <div className="navElements py-1 px-2">
-                            <ul className='grid justify-evenly gap-[1rem]'>
-                                <NavLink  to="/HR/home" className={({isActive}) => ` ${ !isActive ? "  hover:bg-gray-300 " : " bg-green-300     hover:bg-green-200  "} hover:bg-green-200  px-10 py-1 max-sm:py-3  max-sm:text-2xl rounded `}> <li >Dashbord</li></NavLink> 
-                                <NavLink to="/HR/jobposting" className={({isActive}) => ` ${ !isActive ? "  hover:bg-gray-300 " : " bg-green-300     hover:bg-green-200  "} hover:bg-green-200  px-10 py-1 max-sm:py-3  max-sm:text-2xl rounded  `}> <li >Job Posting </li></NavLink>
-                                <NavLink to="/HR/Applicants" className={({isActive}) => ` ${ !isActive ? "  hover:bg-gray-300 " : " bg-green-300     hover:bg-green-200  "} hover:bg-green-200  px-10 py-1 max-sm:py-3  max-sm:text-2xl rounded  `}> <li >Applicants </li></NavLink>
-                                <li className='flex gap-2  px-2 py-1 hover:bg-green-200 rounded group max-sm:text-2xl max-sm:py-3 justify-center'>
-                                    <DropBoxLink LinkName={"Profile"}  Option_2={"Logout" }  />
-                                </li>           
-                            </ul>
-                    </div>
-                </div>
-            </div> */}
