@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import SearchIcon from "../HrImgORicon/SearchIconHrDash.svg";
+import DropBoxLink from '../../Student/Components/DropBoxLink';
+import DropBoxOpen from "../HrImgORicon/NavBarDropDownBtn.svg";
 export default function HrHeadder() {
 
     const [theaMode, setTheaMode] = useState(false);
@@ -11,7 +13,7 @@ export default function HrHeadder() {
              <div className="flex flex-grow items-center justify-between py-4 px-4 shadow-2 md:px-6 2xl:px-11">
                 <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
                     <button className="z-99999 block rounded-sm border border-stroke bg-white p-1.5 shadow-sm   lg:hidden">
-                        mobile Display on
+                        =
                     </button>
                     <img src="" alt="" />
                 </div>
@@ -50,7 +52,11 @@ export default function HrHeadder() {
                             <div className='text-[1rem] justify-self-end'>userNames</div>
                             <div className='text-gray-500 font-light text-[0.8rem] justify-self-start '>Company name</div>
                         </li>
-                        <li className='bg-gray-200 p-2 rounded-full'>img</li>
+                        <li className='flex gap-2'>
+                            <h1 className='bg-gray-200 p-2 rounded-full'>img</h1>
+                            <img className='cursor-pointer' src={DropBoxOpen} alt="" />
+                            
+                        </li>
                     </ul>
                 </div>
              </div>
