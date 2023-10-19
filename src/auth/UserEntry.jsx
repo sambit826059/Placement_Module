@@ -15,7 +15,7 @@ export default function UserEntry() {
     setisLoading(true);
     setTimeout(()=>{
     setisLoading(false)
-    },400)
+    },600)
 }, [])
 
   return (
