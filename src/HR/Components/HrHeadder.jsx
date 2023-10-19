@@ -52,11 +52,9 @@ export default function HrHeadder() {
                             <div className='text-[1rem] justify-self-end'>userNames</div>
                             <div className='text-gray-500 font-light text-[0.8rem] justify-self-start '>Company name</div>
                         </li>
-                        <li className='flex gap-2'>
-                            <h1 className='bg-gray-200 p-2 rounded-full'>img</h1>
-                            <img className='cursor-pointer' src={DropBoxOpen} alt="" />
-                            
-                        </li>
+                        <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3'>
+                                <DropBoxLink ProfileImg={'https://picsum.photos/id/200/200/300'} Option_1={"setting" } Option_2={"Logout" }  option2_link={"/login" } />
+                            </li>
                     </ul>
                 </div>
              </div>
