@@ -25,7 +25,7 @@ export default function AdminNav() {
                               <li> <NavLink  to="/admin" className={({isActive}) => ` ${ !isActive ? "  hover:bg-opacity-10 hover:bg-gray-100 text-white  " : " bg-green-300   text-black hover:text-black  hover:bg-green-200  "}  group relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4 text-center `}> Dashboard</NavLink> </li>
                               <li > <NavLink to="/" className={({isActive}) => ` ${ !isActive ? "  hover:bg-opacity-10 hover:bg-gray-100 text-white " : " bg-green-300   text-black hover:text-black   hover:bg-green-200  "} group relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4 `}> HR Management </NavLink></li>
                                 <li > <NavLink to="/" className={({isActive}) => ` ${ !isActive ? "  hover:bg-opacity-10 hover:bg-gray-100 text-white" : " bg-green-300   text-black hover:text-black   hover:bg-green-200  "} group relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4  `}> Student </NavLink></li>
-                                <li className='group  hover:bg-opacity-10 hover:bg-gray-100 text-white relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4'>
+                                <li className='group  hover:bg-opacity-10 hover:bg-gray-100 text-white relative flex items-center gap-2.5 rounded-sm py-2 px-14 font-medium  duration-300 ease-in-out  dark:hover:bg-meta-4'>Something
                                 </li>           
                 </ul>
               </div>
