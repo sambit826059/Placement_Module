@@ -1,15 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../../Student/Components/NavBar'
 import { Outlet } from 'react-router-dom'
 import HrNavBar from './HrNavBar'
 import Footer from '../../Student/Components/Footer'
 import HrHeadder from './HrHeadder'
+import InappLoader from '../../Loaders/InappLoader'
 
 export default function HrLandingLayout() {
   document.title = "HR -[Placement Module]";
+  const [isLoading,setisLoading]=useState(false);
+  
+  
+  useEffect(() => {
+    setisLoading(true);
+    setTimeout(()=>{
+    setisLoading(false)
+    },400)
+}, [])
 
   return (
     <>
+     {
+      isLoading?
+      <InappLoader/>
+      :
+      <>
     <div className="">
       <div className="flex h-screen overflow-hidden">
         <HrNavBar/>
@@ -25,6 +40,11 @@ export default function HrLandingLayout() {
     </div>
    
     </>
+     }
+    
+    </>
+
+   
   )
 }
 
