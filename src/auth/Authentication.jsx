@@ -74,13 +74,18 @@ export default function Authentication(props) {
              <h1 className=' text-center text-4xl'>User {props.LinkButtonName}</h1>
 
             <div>
-              <label htmlFor="dropdown">User type:</label>
+            
+                {    props.SignUpformUse && <>
+
+                 <label htmlFor="dropdown">User type:</label>
                 <select id="dropdown" name="dropdown"value={selectedValue} onChange={(e)=>setSelectedValue(e.target.value)}>
                   <option value="NormalUser">Not Selected</option>
                   <option value="Student">Student</option>
                   <option value="HR">HR</option>
                   <option value="Admin">Admin</option>
                 </select>
+                </>
+                 }
 
 
                 <form  className='grid  place-content-center   gap-6 ' action="/signup" method="post" onSubmit={HandleFormSubmit}>
