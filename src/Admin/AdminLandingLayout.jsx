@@ -1,16 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from './AdminHeadder'
 import Footer from '../Student/Components/Footer'
 import AdminNav from './AdminNav'
+import InappLoader from '../Loaders/InappLoader'
 
 export default function AdminLandingLayout() {
+   const [isLoading,setisLoading]=useState(false);
+  
+  
+  useEffect(() => {
+    setisLoading(true);
+    setTimeout(()=>{
+    setisLoading(false)
+    },400)
+}, [])
+
   return (
     <>
-    
-   
-    
-
+    {
+      isLoading?
+      <InappLoader/>
+      :
+      <>
     <div className="">
       <div className="flex h-screen overflow-hidden">
       <AdminNav/>
@@ -26,5 +38,11 @@ export default function AdminLandingLayout() {
     </div>
     
     </>
+
+    }
+    
+    </>
+
+  
   )
 }
