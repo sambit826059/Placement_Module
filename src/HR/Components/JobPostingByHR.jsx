@@ -9,6 +9,7 @@ export default function JobPostingByHR() {
   const [newRow, setNewRow] = useState({ JobTitle: '', EmploymentType: '' ,jobDescription:'' ,CompanyLogoImage:''});
   const [editingRowId, setEditingRowId] = useState(null);
   const [deletedRowId, setDeletedRowId] = useState(null);
+  
   const addRow = () => {
     
     if (newRow.JobTitle.trim() === '' || newRow.EmploymentType.trim() === '' ||newRow.jobDescription.trim() === '' ) return;
