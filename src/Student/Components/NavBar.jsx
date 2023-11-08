@@ -50,7 +50,7 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
                             </li>
 
                             <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3'>
-                                <DropBoxLink LinkName={"Profile"} ProfileImg={"img.png_not set"} Option_1={"My Profile" } option1_link={"/Student/profile"} Option_2={"setting" } Option_3={"Logout" } option3_link={'/login'} />
+                                <DropBoxLink LinkName={"Profile"} ProfileImg={"img.png_not set"} Option_1={"Profile" } option1_link={"/Student/profile"} Option_2={"Setting" } Option_3={"Logout" } option3_link={'/login'} />
                             </li>
 
                         </ul>
