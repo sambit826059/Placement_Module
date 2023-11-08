@@ -6,10 +6,9 @@ import Internship_bg from "../ImgORicon/bg_internship.svg";
 export default function AdBanner() {
   return (
     <>
-    <div className=" h-[55vh] p-0 gap-3 flex flex-col rounded ">
-      <h1 className='text-2xl'>Explore</h1>
-        <div className='flex gap-[2rem] justify-evenly '> 
-        <ADbanner_Card bg={Internship_bg}/>
+    <div className=" h-[55vh] pt-3 gap-3 flex flex-col rounded ">
+        <div className='flex gap-0 justify-evenly '> 
+        <ADbanner_Card bg={Internship_bg} Internship={true} />
         <ADbanner_Card bg={Hackathon_bg }/>
         </div>
     </div>
