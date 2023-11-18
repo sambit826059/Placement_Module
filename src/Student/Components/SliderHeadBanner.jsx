@@ -37,7 +37,7 @@ const HeadBannerButtonStyle_ThirdBanner=' bg-white bg-opacity-75  hover:bg-gray-
 
 
   return (
-    <div className="slider-head md:px-3 mb-7 ">
+    <div className="slider-head md:px-0 mb-5 ">
       <Slider {...settings}>
         <div>
              <HeadBanner 
