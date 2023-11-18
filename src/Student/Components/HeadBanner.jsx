@@ -4,11 +4,11 @@ export default function HeadBanner(props) {
     <>
     
     
-    <div className="  md: pt-4 pl-1  ">
+    <div className="  md: pt-4 pl-1 z-30  rounded-md    ">
 
-         <div className="relative ">
+         <div className="relative rounded-md ">
             <img
-                className="object-cover w-full h-[52vw]  md:h-[35vh] rounded-md"
+                className="object-cover w-full h-[52vw]  md:h-[39vh] rounded-md  "
                 src={props.HeadBannerImage}
                 alt="Your Image"
             />
