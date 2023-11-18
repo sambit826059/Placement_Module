@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import EditPostVector from "../HrImgORicon/EditPostVector.svg";
 import DeletePostVector from "../HrImgORicon/DeletePostVector.svg";
 
@@ -10,6 +10,8 @@ export default function JobPostingByHR() {
   const [editingRowId, setEditingRowId] = useState(null);
   const [deletedRowId, setDeletedRowId] = useState(null);
   
+
+
   const addRow = () => {
     
     if (newRow.JobTitle.trim() === '' || newRow.EmploymentType.trim() === '' ||newRow.jobDescription.trim() === '' ) return;
@@ -32,6 +34,34 @@ export default function JobPostingByHR() {
 
     setNewRow({ JobTitle: '', EmploymentType: '',jobDescription:'' ,CompanyLogoImage:'' });
   };
+
+
+  // it will helps to show data from database by fetching api 
+
+  // useEffect(() => {
+  //   loadUsers();
+  // }, []);
+
+
+  // const loadUsers =()=>{
+  //   fetch('http://localhost:8080/')
+  //   .then((response) => {
+  //     if (!response.ok) {
+  //       throw new Error('Network response was not ok');
+  //     }
+  //     return response.json();
+  //   })
+  //   .then((result) => {
+  //     setData(result);
+  //   })
+  //   .catch((error) => {
+  //     console.error('Error fetching data:', error);
+  //   });
+  // }
+
+
+
+
 
   const deleteRow = (rowId) => {
     setDeletedRowId(rowId); 
@@ -152,7 +182,7 @@ export default function JobPostingByHR() {
               </div>           
             </div>
 
-            {/* --------------------------- */}
+            {/* ---------displayign------------------ */}
                                 { !AddPosting&&
                                     <div className='mt-10 flex flex-col-reverse justify-between gap-2 '>
                                     {data.map((row) => (
@@ -181,7 +211,10 @@ export default function JobPostingByHR() {
                                       </div>
                                     ))}
                                     </div> 
-                                }                    
+                                }   
+
+
+
             </div>
          </div>
     </div>
