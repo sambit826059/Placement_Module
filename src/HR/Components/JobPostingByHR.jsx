@@ -6,12 +6,11 @@ import { useParams } from 'react-router-dom';
 export default function JobPostingByHR() {
 
   const [jobpost, setJobpost] = useState({
-    name: "",
-    companyName: "",
-    email: "",
-    jobtitle:"",
-    employmenttype:"",
-    jobdiscription:""
+    title: "",  
+    description: "", 
+    company: "",
+    employmentType:""
+    
   });
   const [addedMsg, setAddedMsg] = useState(false);
   const[errorMeg,setErrorMeg]=useState(false);
@@ -19,7 +18,7 @@ export default function JobPostingByHR() {
 
 
 
-  const { name,companyName, email ,jobtitle , employmenttype,jobdiscription} = jobpost;
+  const { title,description, company ,employmentType } = jobpost;
 
   const onInputChange = (e) => {
     setJobpost({ ...jobpost, [e.target.name]: e.target.value });
@@ -30,10 +29,10 @@ export default function JobPostingByHR() {
     e.preventDefault();
     console.log(jobpost);
 
-    if (jobpost.name === '' || jobpost.companyName === '' || jobpost.email === '' || jobpost.jobtitle === '' || jobpost.jobdiscription === '' || jobpost.employmenttype === '') {
+    if (jobpost.title === '' || jobpost.description === '' || jobpost.company === '' || jobpost.employmentType === '' ) {
       setErrorMeg(true);
     } else {
-      fetch("http://localhost:8080/hr", {
+      fetch("http://localhost:8080/api/jobpostings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(jobpost)
@@ -62,7 +61,7 @@ export default function JobPostingByHR() {
   },[]);
 
   const loadJobPost=()=>{
-    fetch('http://localhost:8080/hr')
+    fetch('http://localhost:8080/api/jobpostings')
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -83,7 +82,7 @@ export default function JobPostingByHR() {
   
 
   const DeleteJobPost=(id)=>{
-    fetch(`http://localhost:8080/hr${id}`, {
+    fetch(`http://localhost:8080/api/jobpostings/{id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     })
@@ -105,12 +104,10 @@ export default function JobPostingByHR() {
   const EmptyForm = () => {
 
     setJobpost({
-      name: "",
-      companyName: "",
-      email: "",
-      jobtitle:"",
-      employmenttype:"",
-      jobdiscription:""
+      title: "",  
+      description: "", 
+      company: "",
+      employmentType:""
     });
 
     };
@@ -129,13 +126,10 @@ export default function JobPostingByHR() {
               <div className=" bg-yellow-00 rounded-xl   ">               <button onClick={() => {setJobpost(true)}} >Add post</button>
                   <div className={`${!addpost? 'hidden' : 'block' }`}>
                       <form onSubmit={(e) => HandleForm(e)} className='grid gap-5 flex-col justify-center align-center pt-10'>
-                          <input value={name} onChange={(e) => onInputChange(e)} name="name" className='bg-gray-100 rounded-sm p-2 w-[75vw] md:w-[22rem]' type="text" placeholder='Name' />
-                          <input value={companyName} onChange={(e) => onInputChange(e)} name="companyName" className='bg-gray-100 rounded-sm p-2 md:w-[22rem]' type="text" placeholder='Company Name' />
-                          <input value={email} onChange={(e) => onInputChange(e)} name="email" className='bg-gray-100 rounded-sm p-2 md:w-[22rem]' type="text" placeholder='Email' />
-
-                          <input value={jobtitle} onChange={(e) => onInputChange(e)} name="jobtitle" className='bg-gray-100 rounded-sm p-2 w-[75vw] md:w-[22rem]' type="text" placeholder='Job Title' />
-                          <input value={employmenttype} onChange={(e) => onInputChange(e)} name="employmenttype" className='bg-gray-100 rounded-sm p-2 md:w-[22rem]' type="text" placeholder='Employment Type' />
-                          <input value={jobdiscription} onChange={(e) => onInputChange(e)} name="jobdiscription" className='bg-gray-100 rounded-sm p-2 md:w-[22rem]' type="text" placeholder='Job Description' />
+                          <input value={title} onChange={(e) => onInputChange(e)} name="title" className='bg-gray-100 rounded-sm p-2 w-[75vw] md:w-[22rem]' type="text" placeholder='title' />
+                          <input value={description} onChange={(e) => onInputChange(e)} name="description" className='bg-gray-100 rounded-sm p-2 md:w-[22rem]' type="text" placeholder='description' />
+                          <input value={company} onChange={(e) => onInputChange(e)} name="company" className='bg-gray-100 rounded-sm p-2 md:w-[22rem]' type="text" placeholder='company' />
+                          <input value={employmentType} onChange={(e) => onInputChange(e)} name="employmentType" className='bg-gray-100 rounded-sm p-2 w-[75vw] md:w-[22rem]' type="text" placeholder='employmentType' />
 
 
                           <div className='flex gap-4'>
@@ -170,9 +164,9 @@ export default function JobPostingByHR() {
                             </div>
 
                             <div className='mr-auto bg-green-00 px-7 ' >
-                              <ul className='list-disc md:grid grid-flow-col justify-start gap-8'> <li>Job Title : {jobpost.jobtitle}</li> <li> Employment Type : {jobpost.employmenttype}</li></ul>
+                              <ul className='list-disc md:grid grid-flow-col justify-start gap-8'> <li>Job title : {jobpost.title}</li> <li> Employment Type : {jobpost.employmentType}</li></ul>
                               <div> </div>
-                              <div>{jobpost.jobdiscription}</div>
+                              <div>{jobpost.description}</div>
                             </div>
                             <div className=' m-auto mb-1 justify-self-end'>
                             <button className='  px-7 rounded-full border border-black '>See</button>
