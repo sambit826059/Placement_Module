@@ -9,7 +9,7 @@ export default function HrHeadder() {
 
   return (
     <>
-        <header className={`sticky top-0 z-999 flex w-full  ${theaMode ? 'bg-slate-700' : 'bg-white'} drop-shadow-md drop-shadow-gray-100 border-b border-slate-300  `}>
+        <header className={`sticky top-0 z-40 flex w-full  ${theaMode ? 'bg-slate-700' : 'bg-white'} drop-shadow-md drop-shadow-gray-100 border-b border-slate-300  `}>
              <div className="flex flex-grow items-center justify-between py-4 px-4 shadow-2 md:px-6 2xl:px-11">
                 <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
                     <button className="z-99999 block rounded-sm border border-stroke bg-white p-1.5 shadow-sm   lg:hidden">
