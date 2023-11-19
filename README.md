@@ -1,5 +1,5 @@
  # Placement Module Readme
-
+ 
 ## Usability
 
 The Placement Module is designed to facilitate seamless interaction and communication between students, the training and placement cell, and hiring managers. Here's how each group can benefit from this module: 
@@ -33,7 +33,6 @@ The Placement Module offers a range of core features to streamline the placement
 - Provide a user-friendly scheduling system with different views for HR professionals and students, ensuring smooth communication and planning.
 
 - HRs will be able to schedule their dates with the placement shell. And the students will also have read-only access to the calander.
-
 
 
 ### 5. Location Tracking (HR)
