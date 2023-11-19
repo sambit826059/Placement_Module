@@ -17,6 +17,7 @@ import AdminHome from "./Admin/AdminHome";
 import AuthUserType from "./auth/AuthUserType";
 import JobPostingByHR from "./HR/Components/JobPostingByHR";
 import ApplicantHR from "./HR/Components/ApplicantHR";
+import StudentProfile from "./Student/Components/StudentProfile";
 
 
 export default function App() {
@@ -41,6 +42,8 @@ export default function App() {
           <Route path="/Student/" element={<Home />} />
           <Route path="/Student/Home" element={<Home />} />
           <Route path="/Student/Apply" element={<Apply />} />
+          <Route path="/Student/profile" element={<StudentProfile/>} />
+          
         </Route>
 
         {/* HR Links */}

@@ -19,11 +19,11 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
   return (
         <>
         
-        <div className="  sticky top-0 z-10   w-[100%]  ">
+        <div className=" z-999 sticky top-0 z-10   w-[100%]  ">
 
             
 
-        <div className="bg-gray-200  p-2 pr-4 md:p-2 sm:pr-12 md:pr-12   ">    
+         <div className="bg-gray-200  p-2 pr-4 md:p-2 sm:pr-12 md:pr-12   ">    
 
                     <div className="sm:hidden  grid justify-end  ">
                         <input type="checkbox" id='nav-toggle'  className="checkbox-sb group/check hidden"/>
@@ -38,22 +38,14 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
                         
                         <ul className=' grid  gap-2  sm:flex max-sm:gap-0  sm:gap-4 sm:justify-end  '>
 
-                            <NavLink  to="" className={({isActive}) => ` ${ !isActive ? "bg-gray-00  hover:bg-gray-300 " : "bg-gray-00  underline underline-offset-8  hover:bg-gray-300 "}   px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}> <li >Home</li></NavLink> 
 
 
-                            <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3  '>
 
-                            <DropBoxLink LinkName={"Resource"}  Option_1={"Check" }/>
-                            </li>  
-
-                            <NavLink to="" className={({isActive}) => ` ${isActive ? "bg-gray-00 underline underline-offset-8 hover:bg-gray-300 " : "bg-gray-00   hover:bg-gray-300 "}   px-2 py-1 max-sm:py-3  max-sm:text-2xl rounded md:text-center `}> <li >Apply </li></NavLink>
                             
-                            <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3'>
-                            <DropBoxLink LinkName={"Interview"} Option_1={"Check Update" }/>
-                            </li>
+                            
 
                             <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3'>
-                                <DropBoxLink LinkName={"Profile"} Option_1={"setting" } Option_2={"Logout" }  />
+                                <DropBoxLink ProfileImg={'https://picsum.photos/id/200/200/300'} Option_1={"setting" } Option_2={"Logout" }  option2_link={"/login" } />
                             </li>
 
                         </ul>

@@ -1,8 +1,11 @@
 .slider-head .slick-prev::before,
 .slider-head .slick-next::before {
-  color: #000; 
+  color: #0000005d; 
   display: block;
+  transform: scale(1.2);
+
 }
+
 
 .slick-dots li button::before {
   font-size: 0.52rem; 
