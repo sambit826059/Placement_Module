@@ -7,7 +7,7 @@ export default function ResourcesBox() {
     <img className='  object-cover  w-[100%]  h-[12vw] rounded box-content ' src="https://picsum.photos/seed/picsum/200/300" alt="" />
     <div className="bg-green-200 p-4 ">
         <div className="bg-gray-400 object-contain  p-1 rounded w-fit ">
-            see here
+            check this 
         </div>
     </div>
     </div>
