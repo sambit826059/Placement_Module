@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import EditPostVector from "../HrImgORicon/EditPostVector.svg";
 import DeletePostVector from "../HrImgORicon/DeletePostVector.svg";
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export default function JobPostingByHR() {
 
@@ -191,7 +191,7 @@ export default function JobPostingByHR() {
                       {jobposts.map((jobpost, index) => (
                         <div key={index} className= {`   opacity-2 transition ease-in-out  delay-150 -translate-y-1 scale-95 duration-300'  group `} >
                           <div className='group-hover:visible invisible flex ml-auto justify-end px-10 gap-3'>
-                            <button className='    bg-green-300 rounded p-2 group-hover:block ' onClick={() => UpdateJobPost(jobpost.id)} > <img src={EditPostVector} alt="" /> </button>
+                            <Link to={`/hr/jobpost/${jobpost.id}`} className='    bg-green-300 rounded p-2 group-hover:block ' onClick={() => UpdateJobPost(jobpost.id)} > <img src={EditPostVector} alt="" /> </Link>
                             <button className='bg-red-300 p-2 rounded group-hover:block' onClick={() => DeleteJobPost(jobpost.id)} > <img src={DeletePostVector} alt="" /></button>
                           </div>
 
