@@ -32,7 +32,7 @@ export default function JobPostingByHR() {
     if (jobpost.title === '' || jobpost.description === '' || jobpost.company === '' || jobpost.employmentType === '' ) {
       setErrorMeg(true);
     } else {
-      fetch("http://localhost:8080/hr/jobpost", {
+      fetch("http://localhost:8080/jobpostings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(jobpost)
@@ -65,7 +65,7 @@ export default function JobPostingByHR() {
   },[]);
 
   const loadJobPost=()=>{
-    fetch('http://localhost:8080/hr/jobpost')
+    fetch('http://localhost:8080/jobpostings')
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -83,41 +83,9 @@ export default function JobPostingByHR() {
 
   const {id}=useParams();
 
-  const UpdateJobPost = (id, updatedData) => {
-
-    fetch(`http://localhost:8080/hr/jobpost/${id}`, {
-      method: "PUT", 
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedData), 
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-      
-      })
-      .catch((error) => {
-        console.error('Error updating job post:', error);
-      });
-  };
-  
- 
-  const updatedData = {
-    title: "",  
-    description: "", 
-    company: "",
-    employmentType:""
-  };
-  
-  UpdateJobPost(jobpost.id, updatedData);
-  
-
-  
 
   const DeleteJobPost=(id)=>{
-    fetch(`http://localhost:8080/hr/jobpost/${id}`, {
+    fetch(`http://localhost:8080/jobpostings/${id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     })
@@ -191,7 +159,7 @@ export default function JobPostingByHR() {
                       {jobposts.map((jobpost, index) => (
                         <div key={index} className= {`   opacity-2 transition ease-in-out  delay-150 -translate-y-1 scale-95 duration-300'  group `} >
                           <div className='group-hover:visible invisible flex ml-auto justify-end px-10 gap-3'>
-                            <Link to={`/hr/jobpost/${jobpost.id}`} className='    bg-green-300 rounded p-2 group-hover:block ' onClick={() => UpdateJobPost(jobpost.id)} > <img src={EditPostVector} alt="" /> </Link>
+                            <Link to={`/HR/hr/jobpost/${jobpost.id}`} className='    bg-green-300 rounded p-2 group-hover:block ' onClick={() => UpdateJobPost(jobpost.id)} > <img src={EditPostVector} alt="" /> </Link>
                             <button className='bg-red-300 p-2 rounded group-hover:block' onClick={() => DeleteJobPost(jobpost.id)} > <img src={DeletePostVector} alt="" /></button>
                           </div>
 

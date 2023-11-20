@@ -23,7 +23,7 @@ export default function Apply() {
   },[]);
 
   const loadJobPost=()=>{
-    fetch('http://localhost:8080/hr/jobpost')
+    fetch('http://localhost:8080/jobpostings')
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -44,7 +44,7 @@ export default function Apply() {
   return (
     <>
 
-            <div className="text-left p-10 font-medium bg-yellow-00 "> 
+            <div className="text-left p-10 font-medium bg-yellow-00 min-h-[100vh] "> 
             <h1 className='text-[2rem] pl-10 '>Apply here</h1>
            
                                     <div className='mt-10 flex flex-col-reverse justify-between gap-2 '>
