@@ -18,6 +18,7 @@ import AuthUserType from "./auth/AuthUserType";
 import JobPostingByHR from "./HR/Components/JobPostingByHR";
 import ApplicantHR from "./HR/Components/ApplicantHR";
 import StudentProfile from "./Student/Components/StudentProfile";
+import JobPostingUpdate from "./HR/Components/JobPostingUpdate";
 
 
 export default function App() {
@@ -57,7 +58,9 @@ export default function App() {
           <Route path="/HR/" element={<HrHome />} />
           <Route path="/HR/home" element={<HrHome />} />
           <Route path="/HR/jobposting" element={<JobPostingByHR />} />
+          <Route path="/HR/hr/jobpost/:id" element={<JobPostingUpdate/>} />
           <Route path="/HR/Applicants" element={<ApplicantHR/>} />
+          
          
         </Route>
 
