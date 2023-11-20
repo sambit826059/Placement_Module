@@ -10,12 +10,7 @@ export default function Authentication(props) {
     const [PassWord, setPassWord] = useState('')
     const [RePassWord, setRePassWord] = useState('')
     const [Errormesg, setErrormesg] = useState('')
-    // const [selectedUserType, setSelectedUserType] = useState('')
-
-    // const {selectedUserType}=useContext(ContextUserType);
-    // const {setSelectedUserType}=useContext(ContextUserType);
-
-  //  const { selectedUserType, setSelectedUserType } = useContext(ContextUserType);
+    
 
   const userTypeMap = {
     NormalUser:'Not Selected',
@@ -30,29 +25,33 @@ export default function Authentication(props) {
   const [Entry_Link,setEntry_Link]=useState('')
 
  
-  const  HandleFormSubmit=(e)=>{
-    e.preventDefault(); 
-  }
+  // const  HandleFormSubmit=(e)=>{
+  //   e.preventDefault(); 
+  // }
 
+  const [userAuthData, setUserAuthDatat] = useState({
+    usertype: "",  
+    password: ""
+    
+  });
+
+  const { usertype, password } = userAuthData;
+
+  const onInputChange = (e) => {
+    setUserAuthDatat({ ...userAuthData, [e.target.name]: e.target.value });
+  };
 
   useEffect(() => {
-    if (selectedUserType === 'Student') {
-      // if(UserName==='soumen' && PassWord==='102'){
+    if (usertype === 'Student') {
+     
         setEntry_Link('/Student/Home');
 
-      // }
-      // else if(UserName==='sambit'&& PassWord==='42'){
-        // setEntry_Link('/Student/Home');
-      // }
-      // else{
-        // setEntry_Link('');
-      // }
     } 
-    else if (selectedUserType === 'HR') {
+    else if (usertype === 'HR') {
       setEntry_Link('/HR/home');
 
     }
-    else if (selectedUserType === 'Admin') {
+    else if (usertype === 'Admin') {
       setEntry_Link('/Admin');
 
     }
@@ -60,9 +59,54 @@ export default function Authentication(props) {
     {
       setEntry_Link('');
     }
-  }, [selectedUserType,UserName,PassWord]);
+  }, [usertype]);
 
-  
+
+
+ 
+
+  const [addedMsg, setAddedMsg] = useState(false);
+  const[errorMeg,setErrorMeg]=useState(false);
+
+  const HandleForm = (e) => {
+    e.preventDefault();
+
+    console.log(userAuthData);
+      fetch("http://localhost:8080/userentry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userAuthData)
+      })
+        .then(() => {
+          console.log("New user added");
+          setAddedMsg(true);
+          setErrorMeg(true);
+         
+
+          setTimeout(() => {
+             setErrorMeg(false);
+             setAddedMsg(false);
+          
+          }, 1000);
+    
+          
+    
+          EmptyForm();
+         
+        });
+    
+    
+  };
+
+  const EmptyForm = () => {
+    setErrorMeg(false);
+    setJobpost({
+      usertype: "",  
+     password: ""
+    });
+
+    };
+
 
 
   return (
@@ -75,23 +119,27 @@ export default function Authentication(props) {
 
             <div>
             
-                {    props.SignUpformUse && <>
-
-                 <label htmlFor="dropdown">User type:</label>
-                <select id="dropdown" name="dropdown"value={selectedValue} onChange={(e)=>setSelectedValue(e.target.value)}>
-                  <option value="NormalUser">Not Selected</option>
-                  <option value="Student">Student</option>
-                  <option value="HR">HR</option>
-                  <option value="Admin">Admin</option>
-                </select>
-                </>
-                 }
+              
 
 
-                <form  className='grid  place-content-center   gap-6 ' action="/signup" method="post" onSubmit={HandleFormSubmit}>
+                <form  onSubmit={(e) => HandleForm(e)} className='grid  place-content-center   gap-6 '  >
+
+                      {    props.SignUpformUse && <>
+
+                          <div>
+                            <label htmlFor="dropdown">User type:</label>
+                            <select id="dropdown" name="usertype" value={usertype}  onChange={(e) => onInputChange(e)}>
+                              <option value="NormalUser">Not Selected</option>
+                              <option value="Student">Student</option>
+                              <option value="HR">HR</option>
+                              <option value="Admin">Admin</option>
+                            </select>
+                          </div>
+                      </>
+                    }
                     
-                    <input className='bg-gray-100 text-black placeholder:text-gray-500 py-2 px-4 rounded font-light outline-2 focus:outline-gray-200 focus:bg-white focus:outline ' type='text' placeholder='Username' value={UserName} onChange={(e)=>setUserName(e.target.value)} name='username'/>
-                    <input className='bg-gray-100 text-black placeholder:text-gray-500 py-2 px-4 rounded font-light outline-2  focus:outline-gray-200 focus:bg-white focus:outline ' placeholder='Password' type='password' value={PassWord} onChange={(e)=>setPassWord(e.target.value) } name='password'/>
+                    <input className='bg-gray-100 text-black placeholder:text-gray-500 py-2 px-4 rounded font-light outline-2 focus:outline-gray-200 focus:bg-white focus:outline ' type='text' placeholder='Username'  value={UserName} onChange={(e)=>setUserName(e.target.value)} name='username'/>
+                    <input className='bg-gray-100 text-black placeholder:text-gray-500 py-2 px-4 rounded font-light outline-2  focus:outline-gray-200 focus:bg-white focus:outline ' placeholder='Password' type='password'name="password" value={password} onChange={(e) => onInputChange(e)}/>
 
                       {
                         props.SignUpformUse &&
@@ -109,7 +157,16 @@ export default function Authentication(props) {
 
                       <Link to={Entry_Link} className={`${props.SignUpformUse ? "bg-[#FF6D5C] shadow-orange-600/50  hover:shadow-orange-600/0  ": " bg-purple-500 shadow-purple-500/50 hover:shadow-purple-500/0 "}  rounded-full py-2 text-[1.14rem]  text-white shadow-lg  `}> <button  type='submit'>{props.LinkButtonName}</button></Link>
                     
-                      <Link to={props.Links}> <button className='text-gray-400 hover:text-gray-600'>{props.EntryWayMessage}</button></Link>
+                      <Link to={props.Links}> <button type="submit"  className='text-gray-400 hover:text-gray-600'>{props.EntryWayMessage}</button></Link>
+
+                      <div className={`${addedMsg ? "block" : "hidden"}  text-green-500 text-center border border-green-500 p-0 flex justify-between`}>
+                            <h4 className='p-2'>Successfully added</h4>
+                          </div>
+                          
+
+                          <div className={`${errorMeg ? "block" : "hidden"}  text-red-500 text-center border border-red-500 p-0 flex justify-between`}>
+                            <h4 className='p-2'>Fill properly</h4>
+                          </div>
                 </form>
             </div>
 

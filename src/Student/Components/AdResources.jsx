@@ -55,7 +55,7 @@ export default function AdResources() {
       
   return (
     <>
-    <div className="AdResources overflow-hidden">
+    <div className="AdResources overflow-hidden mb-24">
         <div className="bg-gray-200 mt-5  py-8  box-content">
             <div className="flex justify-center py-5 mb-5 ">
             this banner is for the Resources ad 
