@@ -1,7 +1,7 @@
 import React, { useState,useEffect,useNavigate } from 'react'
 import { Link, useParams } from 'react-router-dom';
 
-export default function JobPostingUpdate() {
+export default function JobPostUpdate() {
 
     const [jobpost, setJobpost] = useState({
         title: "",  
