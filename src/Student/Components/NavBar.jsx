@@ -22,7 +22,7 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
 
             
 
-        <div className="bg-gray-200  p-2 pr-4 md:py-1 sm:pr-12 md:pr-[4rem]   ">    
+        <div className="bg-slate-200  p-2 pr-4 md:py-1 sm:pr-12 md:pr-[4rem]   ">    
 
                     <div className="sm:hidden  grid justify-end  ">
                         <input type="checkbox" id='nav-toggle'  className="checkbox-sb group/check hidden"/>
