@@ -15,6 +15,13 @@ function Navbar() {
 
 const [OpenNavMenu,setOpenNavMenu]=useState(false);
 
+const storedTheme = localStorage.getItem("theme");
+
+if (storedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+}
+
+
   return (
         <>
         
@@ -22,7 +29,7 @@ const [OpenNavMenu,setOpenNavMenu]=useState(false);
 
             
 
-        <div className="bg-slate-200  p-2 pr-4 md:py-1 sm:pr-12 md:pr-[4rem]   ">    
+        <div className="bg-slate-200  dark:bg-slate-800 p-2 pr-4 md:py-1 sm:pr-12 md:pr-[4rem]   ">    
 
                     <div className="sm:hidden  grid justify-end  ">
                         <input type="checkbox" id='nav-toggle'  className="checkbox-sb group/check hidden"/>
