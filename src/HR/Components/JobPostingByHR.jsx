@@ -127,7 +127,7 @@ export default function JobPostingByHR() {
       <div className="overflow-hidden rounded-sm border border-stroke bg-white shadow-default dark:border-stroke-dark dark:bg-box-dark ">
       <div className={` py-10 px-5 ${!addpost ? "md:p-10  grid justify-items-center" : ""}  `}>
               <div className=" bg-yellow-00 rounded-xl   ">         
-                <button className='w-max bg-gray-100 rounded-3xl px-10 py-2' onClick={() => {setAddpost(!addpost)} } >{!addpost ? "Addpost" : "discard" }</button>
+                <button className='w-max bg-gray-100 rounded-3xl px-10 py-2' onClick={() => {setAddpost(!addpost); EmptyForm();} } >{!addpost ? "Addpost" : "discard" }</button>
 
                   <div className={`${!addpost? 'hidden' : 'block' }`}>
                       <form onSubmit={(e) => HandleForm(e)} className='grid gap-5 flex-col justify-center align-center pt-10'>
@@ -159,7 +159,7 @@ export default function JobPostingByHR() {
                       {jobposts.map((jobpost, index) => (
                         <div key={index} className= {`   opacity-2 transition ease-in-out  delay-150 -translate-y-1 scale-95 duration-300'  group `} >
                           <div className='group-hover:visible invisible flex ml-auto justify-end px-10 gap-3'>
-                            <Link to={`/HR/hr/jobpost/${jobpost.id}`} className='    bg-green-300 rounded p-2 group-hover:block ' onClick={() => UpdateJobPost(jobpost.id)} > <img src={EditPostVector} alt="" /> </Link>
+                            <Link to={`/HR/hr/jobpost/${jobpost.id}`} className='    bg-green-300 rounded p-2 group-hover:block '  > <img src={EditPostVector} alt="" /> </Link>
                             <button className='bg-red-300 p-2 rounded group-hover:block' onClick={() => DeleteJobPost(jobpost.id)} > <img src={DeletePostVector} alt="" /></button>
                           </div>
 

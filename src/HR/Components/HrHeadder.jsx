@@ -2,14 +2,18 @@ import React, { useState } from 'react'
 import SearchIcon from "../HrImgORicon/SearchIconHrDash.svg";
 import DropBoxLink from '../../Student/Components/DropBoxLink';
 import DropBoxOpen from "../HrImgORicon/NavBarDropDownBtn.svg";
+
 export default function HrHeadder() {
 
-    const [theaMode, setTheaMode] = useState(false);
+    // const [theaMode, setTheaMode] = useState(false);
+    function ToggleThem(){
+        document.documentElement.classList.toggle("dark");
+    }
 
 
   return (
     <>
-        <header className={`sticky top-0 z-40 flex w-full  ${theaMode ? 'bg-slate-700' : 'bg-white'} drop-shadow-md drop-shadow-gray-100 border-b border-slate-300  `}>
+        <header className={`sticky top-0 z-40 flex w-full  dark:bg-slate-700 drop-shadow-md drop-shadow-gray-100 border-b border-slate-300  `}>
              <div className="flex flex-grow items-center justify-between py-4 px-4 shadow-2 md:px-6 2xl:px-11">
                 <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
                     <button className="z-99999 block rounded-sm border border-stroke bg-white p-1.5 shadow-sm   lg:hidden">
@@ -43,14 +47,14 @@ export default function HrHeadder() {
                       <button>
                                 {/* Dark mode button */}
                                <label className="    ">
-                                    <input  onClick={() => {  setTheaMode(!theaMode) }}type="checkbox" className="sr-only  peer " />
+                                    <input  onClick={ToggleThem}type="checkbox" className="sr-only  peer " />
                                     <span className="peer peer-checked:bg-green-300  cursor-pointer relative inline-block w-[3.2em] h-[1.8em] transition-all duration-300 ease-in-out bg-gray-300  rounded-full          peer-active:before:w-[]  peer-checked:before:left-[1.6rem]  before:absolute before:content-inside before:top-[0.25rem] before:left-[0.3rem] before:w-[1.3em] before:h-[1.3em] before:bg-white  before:rounded-full  before:transform before:transition-transform before:duration-300 before:ease-in-out  "></span>
                                 </label>                            
                         </button>
                      </li>
                         <li className='grid justify-items-stretch gap-0'>
-                            <div className='text-[1rem] justify-self-end'>userNames</div>
-                            <div className='text-gray-500 font-light text-[0.8rem] justify-self-start '>Company name</div>
+                            <div className='text-[1rem] justify-self-end dark:text-white'>userNames</div>
+                            <div className='text-gray-500 font-light text-[0.8rem] justify-self-start dark:text-gray-300 '>Company name</div>
                         </li>
                         <li className='flex gap-2 hover:bg-gray-300 px-2 py-1 rounded group max-sm:text-2xl max-sm:py-3'>
                                 <DropBoxLink ProfileImg={'https://picsum.photos/id/200/200/300'} Option_1={"setting" } Option_2={"Logout" }  option2_link={"/login" } />
