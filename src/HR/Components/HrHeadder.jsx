@@ -2,30 +2,13 @@ import React, { useState } from 'react'
 import SearchIcon from "../HrImgORicon/SearchIconHrDash.svg";
 import DropBoxLink from '../../Student/Components/DropBoxLink';
 import DropBoxOpen from "../HrImgORicon/NavBarDropDownBtn.svg";
+import ToggleThem from '../../Theam/ToggleThem';
 
 export default function HrHeadder() {
 
-   function ToggleThem() {
-    document.documentElement.classList.toggle("dark");
-    const isDarkMode = document.documentElement.classList.contains("dark");
-
-    if (isDarkMode) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.removeItem("theme");
-    }
-}
-const storedTheme = localStorage.getItem("theme");
-
-if (storedTheme === "dark") {
-    document.documentElement.classList.add("dark");
-}
-
-
-
   return (
     <>
-        <header className={`sticky top-0 z-40 flex w-full  dark:bg-slate-700 drop-shadow-md drop-shadow-gray-100 border-b border-slate-300  `}>
+        <header className={`sticky top-0 z-40 flex w-full  dark:bg-slate-900 drop-shadow-md drop-shadow-gray-100 border-b border-slate-300 dark:border-green-400  `}>
              <div className="flex flex-grow items-center justify-between py-4 px-4 shadow-2 md:px-6 2xl:px-11">
                 <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
                     <button className="z-99999 block rounded-sm border border-stroke bg-white p-1.5 shadow-sm   lg:hidden">
@@ -56,15 +39,7 @@ if (storedTheme === "dark") {
                 <div className="flex items-center gap-3 2xsm:gap-7">
                     <ul className="flex items-center gap-4 2xsm:gap-4">
                       <li>
-                      <button>
-                                {/* Dark mode button */}
-                                <abbr title=" Change Mode">
-                                        <label className="    ">
-                                            <input  onClick={ToggleThem}type="checkbox" className="sr-only  peer " />
-                                            <span className="peer dark:bg-green-300  cursor-pointer relative inline-block w-[3.2em] h-[1.8em] transition-all duration-300 ease-in-out bg-gray-300  rounded-full     before:absolute before:content-inside before:top-[0.25rem] before:left-[0.3rem] dark:before:left-[1.6rem] before:w-[1.3em] before:h-[1.3em] before:bg-white  before:rounded-full  before:transform before:transition-transform before:duration-300 before:ease-in-out  "></span>
-                                        </label>  
-                                </abbr>                          
-                        </button>
+                      <ToggleThem/>
                      </li>
                         <li className='grid justify-items-stretch gap-0'>
                             <div className='text-[1rem] justify-self-end dark:text-white'>Soumen</div>
