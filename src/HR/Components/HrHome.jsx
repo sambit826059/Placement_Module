@@ -5,16 +5,16 @@ export default function HrHome() {
 
   return (
     <>
-    <div className="overflow-hidden rounded-sm border border-stroke bg-white shadow-default dark:border-stroke-dark dark:bg-box-dark">
+    <div className="overflow-hidden rounded-sm border border-stroke dark:border-green-400 bg-white dark:bg-slate-900 shadow-default dark:border-stroke-dark  dark:bg-box-dark">
         <div className="   fit-content grid   p-2 ">
           <div className=" bg-gray-00  p-1 py-10">
           
-            <h1 className='text-center text-xl'> Dashboard</h1>
+            <h1 className='text-center text-xl dark:text-white'> Dashboard</h1>
              
             <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
           <div className="px-4 py-6 sm:px-0 ">
 
-            <div className="h-[30vh] grid grid-cols-2 gap-4 border-4 border-dashed border-gray-200 rounded-lg ">
+            <div className="h-[30vh] grid grid-cols-2 gap-4 border-4 border-dashed border-gray-2 00  rounded-lg ">
 
                   <div className="flex flex-col ">
                     <div className="overflow-x-hidden">
@@ -49,11 +49,11 @@ export default function HrHome() {
                             <tbody className="divide-y divide-gray-200">
                                 
                                   <tr >
-                                    <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
+                                    <td className="px-6 py-4 text-sm font-medium text-gray-800 dark:text-white whitespace-nowrap">
                                       1.
                                     </td>
-                                    <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">....</td>
-                                    <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">....</td>
+                                    <td className="px-6 py-4 text-sm text-gray-800 dark:text-white whitespace-nowrap">....</td>
+                                    <td className="px-6 py-4 text-sm text-gray-800 dark:text-white whitespace-nowrap">....</td>
                                   </tr>
                           </tbody>
 
@@ -76,7 +76,7 @@ export default function HrHome() {
 
                                 <th
                                   scope="col"
-                                  className="px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
+                                  className="px-6 py-3 text-xs font-bold text-left text-gray-500  uppercase "
                                 >
                                    Analytics
                                 </th>
@@ -85,7 +85,7 @@ export default function HrHome() {
                             </thead >
                             <tbody className="divide-y divide-gray-200">   
                                   <tr >
-                                    <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
+                                    <td className="px-6 py-4 text-sm font-medium text-gray-800 dark:text-white whitespace-nowrap">
                                       see more....
                                     </td>
                                   </tr>
