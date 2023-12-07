@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Authentication from './Authentication';
 import LoginSideImage from "./LoginPageUsedImg.svg";
 import InappLoader from '../Loaders/InappLoader';
+import ToggleThem from '../Theam/ToggleThem';
 
 
 
@@ -26,7 +27,10 @@ export default function Login() {
     <>
     {
       isLoading?
-      <InappLoader/>
+        <>
+        <InappLoader/>
+        <ToggleThem/>
+        </>
       :
 
       <div>

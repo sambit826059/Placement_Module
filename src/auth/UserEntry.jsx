@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import landing_pM from "./blend_backImage.png";
 import InappLoader from '../Loaders/InappLoader';
+import ToggleThem from '../Theam/ToggleThem';
 
 
 
@@ -22,7 +23,10 @@ export default function UserEntry() {
     <>
       {
         isLoading ?
+        <>
         <InappLoader/>
+        <ToggleThem/>
+        </>
 
         :
         <div>

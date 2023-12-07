@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Authentication from './Authentication';
 import SignUppageUsedImg from "./SignUppageUsedImg.svg";
 import InappLoader from '../Loaders/InappLoader';
+import ToggleThem from '../Theam/ToggleThem';
 
 
 
@@ -24,8 +25,10 @@ export default function SignUp() {
     <>
    {
     isLoading?
-    <InappLoader/>
-    :
+        <>
+        <InappLoader/>
+        <ToggleThem/>
+        </>      :
     <div className=" grid  place-content-center h-[100vh]  bg-gradient-to-r from-purple-700 via-pink-600 to-purple-400 ">
       
       <div className=' md:grid rounded xl:gap-3   bg-white grid-cols-[30%,70%] shadow-lg shadow-black-500/50 md:pl-4 p-10 md:p-0'>
